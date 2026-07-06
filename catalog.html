@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Каталог ароматов — 9.19 PERFUME</title>
+<meta name="description" content="Каталог оригинальной и масляной парфюмерии 9.19 PERFUME. Фильтры по типу, полу и бренду, поиск в реальном времени. Заказ через Telegram.">
+<meta property="og:title" content="Каталог ароматов — 9.19 PERFUME">
+<meta property="og:description" content="Оригиналы и масляная парфюмерия. Фильтры, поиск, опт и розница.">
+<meta property="og:image" content="images/placeholder.svg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bg:'#0f0d0b',gold:'#b8935a',cream:'#f0ebe3'},fontFamily:{serif:['"Cormorant Garamond"','serif'],sans:['Jost','sans-serif']}}}}</script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="catalog">
+<div id="site-header"></div>
+
+<section class="max-w-6xl mx-auto px-5 pt-12 pb-6">
+  <h1 class="font-serif text-5xl md:text-6xl">Каталог</h1>
+  <p id="whole-note" class="hidden mt-3 text-sm text-gold">Показаны позиции, доступные оптом. Минимальный оптовый заказ — от 5000₽.</p>
+
+  <!-- Поиск + сортировка -->
+  <div class="flex flex-col md:flex-row gap-3 mt-8">
+    <input id="search" class="input md:flex-1" type="search" placeholder="Поиск по названию или бренду…" autocomplete="off">
+    <select id="brand-filter" class="input md:w-56"></select>
+    <select id="sort" class="input md:w-52">
+      <option value="default">Сортировка</option>
+      <option value="price-asc">Сначала дешевле</option>
+      <option value="price-desc">Сначала дороже</option>
+      <option value="new">Сначала новинки</option>
+    </select>
+  </div>
+
+  <!-- Чипсы-фильтры -->
+  <div class="flex flex-wrap gap-2 mt-4">
+    <button class="chip active" data-filter="type:all">Все</button>
+    <button class="chip" data-filter="type:original">Оригиналы</button>
+    <button class="chip" data-filter="type:oil">Масляные</button>
+    <span class="w-px self-stretch mx-1" style="background:var(--border)"></span>
+    <button class="chip" data-filter="gender:male">Мужские</button>
+    <button class="chip" data-filter="gender:female">Женские</button>
+    <button class="chip" data-filter="gender:unisex">Унисекс</button>
+    <button class="chip" data-filter="gender:all">Любой пол</button>
+  </div>
+
+  <div id="count" class="mt-6 text-sm" style="color:var(--muted)"></div>
+</section>
+
+<!-- Сетка товаров -->
+<section class="max-w-6xl mx-auto px-5 pb-16">
+  <div id="grid" class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"></div>
+</section>
+
+<!-- Модалка товара -->
+<div id="product-modal" class="modal" onclick="if(event.target===this)closeProduct()">
+  <div id="modal-box" class="modal-box"></div>
+</div>
+
+<div id="site-footer"></div>
+<script src="js/site.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

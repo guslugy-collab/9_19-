@@ -1,0 +1,156 @@
+/* ======= 9.19 PERFUME — базовые стили поверх Tailwind CDN ======= */
+:root{
+  --bg:      #0f0d0b;
+  --bg-2:    #16130f;
+  --gold:    #b8935a;
+  --gold-2:  #d8b57e;
+  --cream:   #f0ebe3;
+  --muted:   rgba(240,235,227,.55);
+  --border:  rgba(184,147,90,.22);
+  --border-strong: rgba(184,147,90,.45);
+}
+
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bg);
+  color:var(--cream);
+  font-family:'Jost',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+h1,h2,h3,.font-serif{ font-family:'Cormorant Garamond',Georgia,serif; }
+
+/* Тонкие золотые границы 0.5px */
+.hairline      { border:0.5px solid var(--border); }
+.hairline-b    { border-bottom:0.5px solid var(--border); }
+.hairline-t    { border-top:0.5px solid var(--border); }
+.hairline-strong{ border:0.5px solid var(--border-strong); }
+
+.text-gold  { color:var(--gold); }
+.bg-cream   { background:var(--cream); }
+.tracking-luxe{ letter-spacing:.28em; }
+
+/* ======= Кнопки ======= */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+  padding:.85rem 1.9rem; font-family:'Jost',sans-serif; font-weight:400;
+  letter-spacing:.14em; text-transform:uppercase; font-size:.78rem;
+  border:0.5px solid var(--gold); color:var(--gold);
+  background:transparent; cursor:pointer;
+  transition:all .35s ease; border-radius:2px;
+}
+.btn:hover{ background:var(--gold); color:var(--bg); }
+.btn-solid{ background:var(--gold); color:var(--bg); }
+.btn-solid:hover{ background:var(--gold-2); border-color:var(--gold-2); }
+.btn-ghost{ border-color:var(--border); color:var(--cream); }
+.btn-ghost:hover{ border-color:var(--gold); color:var(--gold); background:transparent; }
+
+/* ======= Карточка товара ======= */
+.card{
+  position:relative; background:var(--bg-2);
+  border:0.5px solid var(--border);
+  transition:transform .4s ease, border-color .4s ease;
+  display:flex; flex-direction:column;
+}
+.card:hover{ transform:translateY(-4px); border-color:var(--border-strong); }
+.card-img{
+  aspect-ratio:1/1; width:100%; object-fit:cover; background:var(--bg);
+  display:block;
+}
+.badge{
+  position:absolute; top:.75rem; left:.75rem; z-index:2;
+  font-size:.62rem; letter-spacing:.18em; text-transform:uppercase;
+  padding:.3rem .6rem; border-radius:2px;
+  background:var(--gold); color:var(--bg); font-weight:500;
+}
+.badge.new{ background:transparent; color:var(--gold); border:0.5px solid var(--gold); }
+.badge.out{ background:rgba(0,0,0,.7); color:var(--muted); border:0.5px solid var(--border); }
+
+/* ======= Чипсы фильтров ======= */
+.chip{
+  padding:.5rem 1.1rem; font-size:.78rem; letter-spacing:.08em;
+  border:0.5px solid var(--border); color:var(--muted);
+  background:transparent; cursor:pointer; border-radius:2px;
+  transition:all .3s ease; white-space:nowrap;
+}
+.chip:hover{ color:var(--cream); border-color:var(--border-strong); }
+.chip.active{ background:var(--gold); color:var(--bg); border-color:var(--gold); }
+
+/* ======= Поля ввода ======= */
+.input{
+  background:var(--bg-2); border:0.5px solid var(--border);
+  color:var(--cream); padding:.7rem 1rem; border-radius:2px;
+  font-size:.9rem; width:100%; outline:none; transition:border-color .3s;
+}
+.input:focus{ border-color:var(--gold); }
+.input::placeholder{ color:var(--muted); }
+select.input{ appearance:none; cursor:pointer; }
+
+/* ======= Модалка / выезжающая корзина ======= */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.72); z-index:60;
+  opacity:0; pointer-events:none; transition:opacity .3s ease;
+}
+.overlay.open{ opacity:1; pointer-events:auto; }
+
+.drawer{
+  position:fixed; top:0; right:0; height:100%; width:min(420px,100%);
+  background:var(--bg-2); border-left:0.5px solid var(--border); z-index:70;
+  transform:translateX(100%); transition:transform .4s ease;
+  display:flex; flex-direction:column;
+}
+.drawer.open{ transform:translateX(0); }
+
+.modal{
+  position:fixed; inset:0; z-index:70; display:flex;
+  align-items:center; justify-content:center; padding:1rem;
+  opacity:0; pointer-events:none; transition:opacity .3s ease;
+}
+.modal.open{ opacity:1; pointer-events:auto; }
+.modal-box{
+  background:var(--bg-2); border:0.5px solid var(--border-strong);
+  max-width:860px; width:100%; max-height:90vh; overflow:auto;
+  transform:translateY(12px); transition:transform .35s ease; border-radius:2px;
+}
+.modal.open .modal-box{ transform:translateY(0); }
+
+/* Анимация появления */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:none; }
+
+/* Скролл-бар */
+::-webkit-scrollbar{ width:9px; }
+::-webkit-scrollbar-track{ background:var(--bg); }
+::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:20px; }
+
+/* ======= Бегущая строка брендов ======= */
+.brands-track{
+  display:flex; gap:4rem; align-items:center;
+  animation:marquee 28s linear infinite;
+  width:max-content;
+}
+.brands-track span{
+  font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--muted); white-space:nowrap;
+}
+@keyframes marquee{
+  0%{ transform:translateX(0); }
+  100%{ transform:translateX(-50%); }
+}
+@media (prefers-reduced-motion:reduce){ .brands-track{ animation:none; } }
+
+/* ======= FAQ аккордеон ======= */
+.faq-item{ transition:background .25s; }
+.faq-item:hover{ background:rgba(184,147,90,.04); }
+.faq-q:focus-visible{ outline:1px solid var(--gold); outline-offset:2px; }
+.faq-icon{ transition:transform .3s ease; display:inline-block; }
+.faq-item.open .faq-icon{ transform:rotate(45deg); }
+.faq-a{ overflow:hidden; }
+
+/* Убираем залипание hover на тач-устройствах (iOS) */
+@media (hover:none){
+  .card:hover{ transform:none; }
+  .btn:hover{ background:transparent; color:var(--gold); }
+  .btn-solid:hover{ background:var(--gold); color:var(--bg); }
+}

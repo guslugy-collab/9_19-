@@ -1,0 +1,141 @@
+[
+  {
+    "id": "amouage-interlude-man",
+    "name": "Interlude Man",
+    "brand": "Amouage",
+    "type": "original",
+    "gender": "male",
+    "notes": "Верх: бергамот, орегано, перец. Сердце: ладан, амбра, кожа. База: кожа, мускус, дерево.",
+    "description": "Дымный, пряный, харизматичный аромат-легенда. Оригинал, прямая поставка из ОАЭ.",
+    "badge": "hit",
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "50 мл", "price": 7900, "price_wholesale": 6200 },
+      { "volume": "100 мл", "price": 12900, "price_wholesale": 9900 }
+    ]
+  },
+  {
+    "id": "creed-aventus",
+    "name": "Aventus",
+    "brand": "Creed",
+    "type": "original",
+    "gender": "male",
+    "notes": "Верх: ананас, бергамот, яблоко. Сердце: берёза, пачули, роза. База: мускус, дубовый мох, ваниль.",
+    "description": "Культовый фруктово-дымный аромат уверенности. Оригинал.",
+    "badge": "hit",
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "100 мл", "price": 18500, "price_wholesale": 14900 }
+    ]
+  },
+  {
+    "id": "lattafa-khamrah",
+    "name": "Khamrah",
+    "brand": "Lattafa",
+    "type": "original",
+    "gender": "unisex",
+    "notes": "Верх: корица, мускат, бергамот. Сердце: финики, каранга, тубероза. База: ваниль, тонка, бензоин.",
+    "description": "Сладко-пряный гурманский бестселлер из ОАЭ. Отличная стойкость.",
+    "badge": "new",
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "100 мл", "price": 3900, "price_wholesale": 2900 }
+    ]
+  },
+  {
+    "id": "oil-tom-ford-oud-wood",
+    "name": "Oud Wood (по мотивам)",
+    "brand": "Tom Ford",
+    "type": "oil",
+    "gender": "unisex",
+    "notes": "Верх: уд, розовое дерево. Сердце: сандал, ветивер. База: амбра, ваниль, бобы тонка.",
+    "description": "Масляная парфюмерия премиум-класса. Тёплый древесно-удовый аккорд.",
+    "badge": null,
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "6 мл", "price": 650, "price_wholesale": 480 },
+      { "volume": "30 мл", "price": 2600, "price_wholesale": 1900 }
+    ]
+  },
+  {
+    "id": "oil-baccarat-rouge-540",
+    "name": "Baccarat Rouge 540 (по мотивам)",
+    "brand": "Maison Francis Kurkdjian",
+    "type": "oil",
+    "gender": "unisex",
+    "notes": "Верх: шафран, жасмин. Сердце: амбра, кедр. База: пихта, амбра.",
+    "description": "Легендарный янтарно-цветочный шлейф в масляной версии. Хит опта.",
+    "badge": "hit",
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "6 мл", "price": 700, "price_wholesale": 520 },
+      { "volume": "30 мл", "price": 2900, "price_wholesale": 2100 }
+    ]
+  },
+  {
+    "id": "dior-sauvage",
+    "name": "Sauvage",
+    "brand": "Dior",
+    "type": "original",
+    "gender": "male",
+    "notes": "Верх: калабрийский бергамот, перец. Сердце: лаванда, амброксан, герань. База: амбра, кедр, лабданум.",
+    "description": "Свежий пряно-древесный аромат №1 для мужчин. Оригинал.",
+    "badge": null,
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "100 мл", "price": 9900, "price_wholesale": 7900 }
+    ]
+  },
+  {
+    "id": "lattafa-yara",
+    "name": "Yara",
+    "brand": "Lattafa",
+    "type": "original",
+    "gender": "female",
+    "notes": "Верх: орхидея, гелиотроп. Сердце: тропические фрукты, тубероза. База: ваниль, сандал, мускус.",
+    "description": "Нежный сладкий женский аромат из ОАЭ. Стойкий и уютный.",
+    "badge": "new",
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "100 мл", "price": 3200, "price_wholesale": 2400 }
+    ]
+  },
+  {
+    "id": "oil-chanel-coco-mademoiselle",
+    "name": "Coco Mademoiselle (по мотивам)",
+    "brand": "Chanel",
+    "type": "oil",
+    "gender": "female",
+    "notes": "Верх: апельсин, бергамот. Сердце: роза, жасмин, личи. База: пачули, ветивер, ваниль.",
+    "description": "Женственный шипрово-цветочный аккорд в масляной версии.",
+    "badge": null,
+    "in_stock": false,
+    "image_url": "",
+    "variants": [
+      { "volume": "6 мл", "price": 600, "price_wholesale": 450 },
+      { "volume": "30 мл", "price": 2500, "price_wholesale": 1800 }
+    ]
+  },
+  {
+    "id": "armani-acqua-di-gio-profumo",
+    "name": "Acqua di Giò Profumo",
+    "brand": "Giorgio Armani",
+    "type": "original",
+    "gender": "male",
+    "notes": "Верх: морская нота, бергамот. Сердце: герань, шалфей, розмарин. База: ладан, пачули.",
+    "description": "Морской минерально-ароматный оригинал. Идеален на лето.",
+    "badge": null,
+    "in_stock": true,
+    "image_url": "",
+    "variants": [
+      { "volume": "75 мл", "price": 11500, "price_wholesale": 9200 }
+    ]
+  }
+]

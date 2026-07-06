@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+
+Sitemap: https://example.github.io/919-perfume/sitemap.xml
