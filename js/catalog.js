@@ -1184,7 +1184,15 @@ function setView(mode, btn){
 
 /* ---------- Поиск в сайдбаре ---------- */
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('sb-search-input')?.addEventListener('input', () => render());
+  document.getElementById('sb-search-input')?.addEventListener('input', (e) => {
+    // При новом поиске не застреваем на выбранном бренде — ищем по всему каталогу
+    if ((e.target.value || '').trim() && activeBrand !== 'all'){
+      activeBrand = 'all';
+      if (window._renderBrands) window._renderBrands();
+      updateBreadcrumb();
+    }
+    render();
+  });
 });
 
 /* ---------- Помощники ---------- */
