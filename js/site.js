@@ -332,17 +332,35 @@ function renderCart(){
   document.getElementById('cart-total').textContent = money(cartTotal());
 }
 
-function checkoutTelegram(){
+function buildOrderMsg(){
   const cart = getCart();
-  if (!cart.length) return;
+  if (!cart.length) return null;
   if (!document.getElementById('cart-consent').checked){
-    document.getElementById('consent-warn').style.display = 'block';
-    return;
+    const w = document.getElementById('consent-warn'); if (w) w.style.display = 'block';
+    return null;
   }
+  const val = id => (document.getElementById(id)?.value || '').trim();
+  const name = val('ord-name'), phone = val('ord-phone'), city = val('ord-city');
+  const method = document.querySelector('input[name="ord-method"]:checked')?.value || 'Доставка';
   const lines = cart.map((i,idx) =>
-    `${idx+1}. ${i.brand} ${i.name} — ${i.type==='oil'?'масло':''} ${i.volume} × ${i.qty} = ${money(i.price*i.qty)}`);
-  const msg = `Здравствуйте! Хочу заказать в 9.19 PERFUME:\n\n${lines.join('\n')}\n\nИтого: ${money(cartTotal())}`;
+    `${idx+1}. ${i.brand} ${i.name} — ${i.type==='oil'?'масло ':''}${i.volume} × ${i.qty} = ${money(i.price*i.qty)}`);
+  let msg = `Здравствуйте! Хочу заказать в 9.19 PERFUME:\n\n${lines.join('\n')}\n\nИтого: ${money(cartTotal())}`;
+  const info = [];
+  if (name)  info.push(`Имя: ${name}`);
+  if (phone) info.push(`Телефон: ${phone}`);
+  info.push(`Способ: ${method}`);
+  if (method !== 'Самовывоз' && city) info.push(`Город: ${city}`);
+  msg += `\n\n${info.join('\n')}`;
+  return msg;
+}
+function checkoutTelegram(){
+  const msg = buildOrderMsg(); if (!msg) return;
   window.open(tgLink(msg), '_blank');
+}
+function checkoutWhatsApp(){
+  const msg = buildOrderMsg(); if (!msg) return;
+  if (!SITE.whatsapp) return;
+  window.open(`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 /* ---------- UI-хелперы ---------- */
@@ -425,12 +443,22 @@ function mountChrome(active){
             <span style="color:var(--muted)">Итого</span>
             <span id="cart-total" class="text-gold text-lg"></span>
           </div>
+          <div class="flex flex-col gap-2 mb-3">
+            <input id="ord-name" type="text" placeholder="Имя" class="cart-field">
+            <input id="ord-phone" type="tel" placeholder="Телефон" class="cart-field">
+            <div class="flex gap-3 text-xs py-1" style="color:var(--muted)">
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="ord-method" value="Доставка" checked class="accent-[color:var(--gold)]">Доставка</label>
+              <label class="flex items-center gap-1.5 cursor-pointer"><input type="radio" name="ord-method" value="Самовывоз" class="accent-[color:var(--gold)]">Самовывоз</label>
+            </div>
+            <input id="ord-city" type="text" placeholder="Город (для доставки)" class="cart-field">
+          </div>
           <label class="flex items-start gap-2 text-xs mb-1 cursor-pointer" style="color:var(--muted)">
             <input type="checkbox" id="cart-consent" class="mt-0.5 accent-[color:var(--gold)]">
             <span>Согласен на обработку персональных данных для оформления заказа</span>
           </label>
           <p id="consent-warn" class="text-xs mb-3" style="display:none;color:#c98">Отметьте согласие, чтобы продолжить</p>
           <button onclick="checkoutTelegram()" class="btn btn-solid w-full">Оформить в Telegram</button>
+          ${SITE.whatsapp ? `<button onclick="checkoutWhatsApp()" class="btn w-full mt-2" style="border-color:#25D366;color:#25D366">Оформить в WhatsApp</button>` : ''}
         </div>
       </aside>`);
     // Делегированный обработчик кнопок корзины (+ / − / удалить)

@@ -40,9 +40,16 @@ h1,h2,h3,.font-serif{ font-family:'Cormorant Garamond',Georgia,serif; }
   background:transparent; cursor:pointer;
   transition:all .35s ease; border-radius:2px;
 }
-.btn:hover{ background:var(--gold); color:var(--bg); }
+.btn:hover{ background:var(--gold); color:var(--bg); box-shadow:0 6px 22px -6px rgba(184,147,90,.55); transform:translateY(-1px); }
 .btn-solid{ background:var(--gold); color:var(--bg); }
-.btn-solid:hover{ background:var(--gold-2); border-color:var(--gold-2); }
+.btn-solid:hover{ background:var(--gold-2); border-color:var(--gold-2); box-shadow:0 8px 26px -8px rgba(184,147,90,.65); transform:translateY(-1px); }
+.cart-field{
+  width:100%; padding:.6rem .75rem; font-family:'Jost',sans-serif; font-size:.82rem;
+  background:var(--bg); border:.5px solid var(--border); border-radius:2px;
+  color:var(--cream); outline:none; transition:border-color .2s;
+}
+.cart-field::placeholder{ color:var(--muted); }
+.cart-field:focus{ border-color:var(--gold); }
 .btn-ghost{ border-color:var(--border); color:var(--cream); }
 .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); background:transparent; }
 

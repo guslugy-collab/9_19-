@@ -147,9 +147,24 @@
 /* ===== Карточка товара (floralodor-стиль) ===== */
 .pcard{
   background:var(--bg-2);display:flex;flex-direction:column;
-  cursor:pointer;transition:background .2s;position:relative;
+  cursor:pointer;position:relative;
+  transition:background .25s ease, transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  border:.5px solid transparent;
 }
-.pcard:hover{background:var(--bg3,#1a1612)}
+.pcard:hover{
+  background:var(--bg3,#1a1612);
+  transform:translateY(-4px);
+  box-shadow:0 14px 34px -12px rgba(0,0,0,.75);
+  border-color:rgba(184,147,90,.35);
+}
+
+/* Скелетоны загрузки */
+.skel-card{background:var(--bg-2);position:relative;overflow:hidden}
+.skel-card .skel-img{aspect-ratio:1/1;background:var(--bg)}
+.skel-card .skel-body{padding:.75rem .85rem 1rem;display:flex;flex-direction:column;gap:.5rem}
+.skel-line{height:10px;border-radius:3px;background:linear-gradient(90deg,rgba(255,255,255,.04) 25%,rgba(184,147,90,.12) 37%,rgba(255,255,255,.04) 63%);background-size:400% 100%;animation:skelShimmer 1.4s ease infinite}
+.skel-line.w40{width:40%}.skel-line.w70{width:70%}.skel-line.w55{width:55%}
+@keyframes skelShimmer{0%{background-position:100% 0}100%{background-position:0 0}}
 
 .pcard-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bg)}
 .pcard-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}

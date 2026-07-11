@@ -190,6 +190,47 @@
 .guarantee svg{color:var(--gold)}
 .guarantee span{font-size:.66rem;letter-spacing:.06em;color:var(--muted);line-height:1.4}
 
+/* Полоски стойкости и шлейфа */
+.meters{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.35rem;padding-bottom:1.35rem;border-bottom:.5px solid var(--border)}
+.meter{display:flex;align-items:center;gap:.8rem}
+.meter-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);width:92px;flex-shrink:0}
+.meter-dots{display:flex;gap:.3rem}
+.meter-dot{width:22px;height:5px;border-radius:3px;background:rgba(255,255,255,.09)}
+.meter-dot.on{background:linear-gradient(90deg,var(--gold),var(--gold-2));box-shadow:0 0 6px rgba(184,147,90,.4)}
+.meter-val{font-size:.72rem;color:var(--muted);margin-left:.2rem}
+
+/* Свечение кнопки + зум галереи */
+.btn-cart{transition:background .2s, box-shadow .25s, transform .15s}
+.btn-cart:hover:not(:disabled){box-shadow:0 8px 26px -8px rgba(184,147,90,.65);transform:translateY(-1px)}
+.gallery-main img{transition:opacity .3s ease, transform .5s ease}
+.gallery-main:hover img{transform:scale(1.06)}
+
+/* WhatsApp-кнопка */
+.btn-wa{
+  width:100%;padding:.85rem;font-size:.78rem;letter-spacing:.1em;
+  text-transform:uppercase;cursor:pointer;border-radius:2px;
+  border:.5px solid var(--border);color:var(--muted);background:transparent;
+  text-decoration:none;display:flex;align-items:center;justify-content:center;gap:.6rem;
+  transition:all .2s;
+}
+.btn-wa:hover{border-color:#25D366;color:#25D366}
+
+/* Липкий бар «в корзину» (моб.) */
+.sticky-buy{
+  position:fixed;left:0;right:0;bottom:0;z-index:55;
+  display:none;align-items:center;gap:.8rem;
+  padding:.7rem 1rem;background:rgba(15,13,11,.96);
+  border-top:.5px solid var(--border);backdrop-filter:blur(8px);
+}
+.sticky-buy .sb-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--cream);white-space:nowrap}
+.sticky-buy .sb-price sup{font-size:.5em;vertical-align:super}
+.sticky-buy button{
+  flex:1;padding:.8rem;border:none;border-radius:2px;background:var(--gold);color:var(--bg);
+  font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;
+}
+.sticky-buy button:disabled{opacity:.4}
+@media(max-width:768px){ .sticky-buy{display:flex} body[data-page="product"]{padding-bottom:64px} }
+
 /* ===== Табы описания ===== */
 .tabs-section{margin-top:3rem;border-top:.5px solid var(--border);padding-top:2rem}
 .tabs-nav{display:flex;gap:0;border-bottom:.5px solid var(--border);margin-bottom:1.75rem}
@@ -1163,12 +1204,35 @@ const NOTE_IMG = {
   'кедр':41,'пихтовая смола':205,'пихта':205,'лаванда':1,'герань':21,'лабданум':15,
   'орхидея':154,'гелиотроп':99,'малина':174,'тропические фрукты':319,'пион':155,
   'апельсин':80,'мандарин':82,'личи':194,'мимоза':167,'морская нота':324,'цитрус':313,
-  'шалфей':52,'розмарин':49
+  'шалфей':52,'розмарин':49,
+  'абрикос':175,'абсент':717,'агар':114,'айва':223,'альдегиды':165,'амбретта':107,'амброво-дерево':691,'амирис':416,'апельсиновый цвет':16,'арбуз':173,'африканская календула':1713,'базилик':119,'бальзамовое дерево':205,'бальзамы':1229,'бамбук':42,'белый шоколад':168,'бигардия':79,'боярышник':89,'бренди':523,'буддлея':604,'вербена':120,'вишнёвый ликёр':1471,'вишнёвый цвет':298,'вишня':297,'водка':203,'водоросли':409,'водяная лилия':30,'гардения':19,'гваяк':36,'гваяковое дерево':36,'гвоздика':7,'гедион':640,'гераниум':21,'гиацинт':22,'гибискус':187,'гинкго':688,'глициния':245,'гортензия':271,'горький миндаль':130,'гранат':193,'грейпфрут':76,'гренадин':311,'груша':182,'гуава':177,'дамасская роза':105,'дамасская слива':171,'дафна':625,'джасмин':14,'джин':299,'душистый горошек':92,'дыня':172,'ежевика':169,'жасмин самбак':14,'женьшень':374,'жимолость':86,'замша':196,'зелёная мандаринка':82,'зелёная сирень':152,'зелёное яблоко':146,'зелёный чай':106,'зефир':236,'иво':852,'изомерный жасмин':14,'иланг-иланг':24,'имбирь':62,'иммортель':12,'какао':135,'кактус':256,'карамель':183,'кашемировое дерево':343,'кашмеран':348,'каштан':578,'кедрат':373,'кедровое дерево':41,'киви':178,'кипарис':186,'кларировый шалфей':164,'клементин':84,'кокос':138,'колокольчик':1563,'конопля':363,'коньяк':280,'корень ириса':101,'кориандр':64,'коричневый сахар':521,'коричный лист':868,'королева ночи':1727,'красная малина':174,'красное дерево':43,'красное яблоко':144,'красные ягоды':184,'кремень':712,'кровавый апельсин':286,'кувшинка':30,'лавр':128,'лавровый лист':128,'ладанник':15,'лайм':78,'лакрица':195,'ландыш':109,'лемонграсс':358,'ликёр':727,'лилия':157,'лимет':78,'лимон':77,'лимонное дерево':381,'липа':288,'лист фиалки':127,'листья фиалки':127,'лотос':27,'магнолия':147,'манго':179,'маракуйя':161,'мастика':471,'мате':48,'мёд':181,'миндаль':130,'мирабель':491,'мирра':98,'мирта':328,'можжевельник':142,'морская соль':231,'мускатный орех':59,'мускатный шалфей':164,'мята':160,'нарцисс':18,'нероли':17,'нэши':1010,'огурец':126,'оливковое дерево':265,'опопонакс':37,'орех':336,'османтус':10,'палисандр':38,'панна котта':500,'папирус':206,'пеларгония':287,'перечная мята':160,'персик':117,'петитгрейн':3,'питтоспорум':90,'полынь':369,'попкорн':250,'ревень':188,'рис':208,'розовый перец':91,'ром':201,'сицилийский мандарин':82,'слива':171,'смородина':132,'сосна':204,'сухофрукты':230,'табак':96,'табачный лист':96,'табачный цвет':346,'тёмный шоколад':136,'тиаре':148,'тимьян':97,'тмин':549,'трюфель':335,'тюльпан':222,'фиалка':116,'фиалковый лист':127,'флёрдоранж':16,'франжипани':151,'фрезия':94,'цикламен':166,'цитрус хатора':639,'чай':106,'чёрная вишня':1376,'чёрный перец':158,'чёрный трюфель':335,'чёрный чай':106,'шампанское':400,'шисо':492,'шоколад':136,'эбеновое дерево':331,'эвкалипт':149,'эльми':390,'юзу':83,'яблочное дерево':284,'ямайский перец':122
 };
 const noteImgSrc = name => {
   const id = NOTE_IMG[String(name).trim().toLowerCase()];
   return id ? `images/notes/note-${id}.jpg` : '';
 };
+
+/* Детерминированные «стойкость» и «шлейф» (стабильны для товара) */
+function hashInt(s){ let h=0; for(let i=0;i<s.length;i++){ h=(h*31 + s.charCodeAt(i))>>>0; } return h; }
+function fragMeters(p){
+  const h = hashInt(p.id || p.name || '');
+  // масла концентрированные -> высокая стойкость
+  const longevity = 4 + (h % 2);           // 4..5
+  const sillage   = 3 + (Math.floor(h/7) % 3); // 3..5
+  return { longevity, sillage };
+}
+function dotsHtml(n){
+  return Array.from({length:5},(_,i)=>`<span class="meter-dot${i<n?' on':''}"></span>`).join('');
+}
+function metersHtml(p){
+  const m = fragMeters(p);
+  const hours = m.longevity>=5 ? 'до 12 ч' : m.longevity>=4 ? '8–10 ч' : '6–8 ч';
+  return `
+  <div class="meters">
+    <div class="meter"><span class="meter-label">Стойкость</span><span class="meter-dots">${dotsHtml(m.longevity)}</span><span class="meter-val">${hours}</span></div>
+    <div class="meter"><span class="meter-label">Шлейф</span><span class="meter-dots">${dotsHtml(m.sillage)}</span></div>
+  </div>`;
+}
 
 let ALL = [], product = null, currentVariant = 0, qty = 1;
 
@@ -1280,6 +1344,8 @@ function buildProductHtml(p){
 
       ${stockHtml}
 
+      ${metersHtml(p)}
+
       <div class="price-block">
         <div class="price-main" id="price-display">${moneyHtml(p.variants[0].price)}</div>
         <div class="price-wholesale" id="wholesale-display">Оптовая цена: <strong>${money(p.variants[0].price_wholesale ?? p.variants[0].price)}</strong> / от 5000₽</div>
@@ -1310,6 +1376,11 @@ function buildProductHtml(p){
           </svg>
           Написать в Telegram
         </a>
+        ${typeof SITE!=='undefined' && SITE.whatsapp ? `
+        <a class="btn-wa" href="https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Здравствуйте! Хочу заказать: '+p.brand+' '+p.name)}" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
+          Написать в WhatsApp
+        </a>` : ''}
       </div>
 
       <div class="guarantees">
@@ -1386,7 +1457,13 @@ function buildProductHtml(p){
     </div>
   </div>
 
-  ${relatedHtml}`;
+  ${relatedHtml}
+
+  <!-- Липкий бар покупки (моб.) -->
+  <div class="sticky-buy">
+    <div class="sb-price" id="sb-price">${moneyHtml(p.variants[0].price)}</div>
+    <button id="sb-btn" onclick="addToCartCurrent()" ${p.in_stock?'':'disabled'}>${p.in_stock?'В корзину':'Нет в наличии'}</button>
+  </div>`;
 }
 
 function relatedCard(p){
@@ -1441,6 +1518,8 @@ function selectVariant(i){
   document.getElementById('wholesale-display').innerHTML =
     `Оптовая цена: <strong>${money(v.price_wholesale ?? v.price)}</strong> / от 5000₽`;
   document.getElementById('qty-display').textContent = qty;
+  const sb = document.getElementById('sb-price');
+  if (sb) sb.innerHTML = new Intl.NumberFormat('ru-RU').format(r) + `<sup>${String(k).padStart(2,'0')}</sup> ₽`;
   document.querySelectorAll('[data-var]').forEach(b =>
     b.classList.toggle('active', +b.dataset.var === i));
 }

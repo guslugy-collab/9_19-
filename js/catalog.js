@@ -869,7 +869,22 @@ const PRODUCTS_INLINE = [
 ];
 
 /* ---------- Загрузка ---------- */
+function showSkeletons(n){
+  const grid = document.getElementById('cat-grid');
+  if (!grid) return;
+  grid.innerHTML = Array.from({length:n}, () => `
+    <div class="skel-card">
+      <div class="skel-img"></div>
+      <div class="skel-body">
+        <div class="skel-line w40"></div>
+        <div class="skel-line w70"></div>
+        <div class="skel-line w55"></div>
+      </div>
+    </div>`).join('');
+}
+
 async function loadCatalog(){
+  showSkeletons(12);
   if (location.protocol === 'file:') {
     ALL = PRODUCTS_INLINE;
   } else {
