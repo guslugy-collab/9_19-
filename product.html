@@ -1357,9 +1357,9 @@ function buildProductHtml(p){
       <div class="qty-block">
         <span class="qty-label">Количество</span>
         <div class="qty-ctrl">
-          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <button class="qty-btn" onclick="prodQty(-1)">−</button>
           <div class="qty-val" id="qty-display">1</div>
-          <button class="qty-btn" onclick="changeQty(1)">+</button>
+          <button class="qty-btn" onclick="prodQty(1)">+</button>
         </div>
       </div>
 
@@ -1524,7 +1524,7 @@ function selectVariant(i){
     b.classList.toggle('active', +b.dataset.var === i));
 }
 
-function changeQty(delta){
+function prodQty(delta){
   qty = Math.max(1, qty + delta);
   document.getElementById('qty-display').textContent = qty;
 }
