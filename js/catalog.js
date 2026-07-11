@@ -898,23 +898,48 @@ async function loadCatalog(){
   }
   applyUrlParams();
   buildBrandList();
+  updateBreadcrumb();
   render();
 }
 
+function normBrand(s){
+  return (s == null ? '' : String(s)).toLowerCase().replace(/[’`]/g, "'").replace(/\s+/g, ' ').trim();
+}
+
+// Сопоставляет произвольную строку из ссылки с реальным брендом каталога.
+// Без учёта регистра; строку вида "Byredo Bal d'Afrique" сводит к бренду "BYREDO".
+function resolveBrand(input){
+  const t = normBrand(input);
+  if (!t) return null;
+  const brands = [...new Set(ALL.map(p => p.brand))];
+  const exact = brands.find(b => normBrand(b) === t);
+  if (exact) return exact;
+  const prefix = brands.filter(b => t.startsWith(normBrand(b) + ' '));
+  if (prefix.length) return prefix.sort((a, b) => b.length - a.length)[0];
+  return null;
+}
+
+function setCheck(id, on){ const el = document.getElementById(id); if (el) el.checked = on; }
+
 function applyUrlParams(){
   const p = new URLSearchParams(location.search);
-  const type   = p.get('type');
-  const gender = p.get('gender');
+  const type   = (p.get('type') || '').toLowerCase();
+  // Пол принимаем и из gender, и по ошибке переданный через type (?type=women).
+  const gender = (p.get('gender') || '').toLowerCase() || type;
   const brand  = p.get('brand');
-  const q      = p.get('q');
+  let   q      = p.get('q');
 
-  if (type === 'original') document.getElementById('f-original').checked = true;
-  if (type === 'oil')      document.getElementById('f-oil').checked = true;
-  if (gender === 'men' || gender === 'male')   document.getElementById('f-male').checked = true;
-  if (gender === 'women' || gender === 'female') document.getElementById('f-female').checked = true;
-  if (gender === 'unisex') document.getElementById('f-unisex').checked = true;
-  if (brand) { activeBrand = brand; }
-  if (q) { const inp = document.getElementById('sb-search-input'); if(inp) inp.value = q; }
+  if (type === 'oil') setCheck('f-oil', true);
+  if (gender === 'men'    || gender === 'male')   setCheck('f-male', true);
+  if (gender === 'women'  || gender === 'female') setCheck('f-female', true);
+  if (gender === 'unisex')                        setCheck('f-unisex', true);
+
+  if (brand){
+    const match = resolveBrand(brand);
+    if (match) activeBrand = match;   // реальный бренд каталога
+    else q = q || brand;              // не бренд → ищем как обычный запрос
+  }
+  if (q){ const inp = document.getElementById('sb-search-input'); if (inp) inp.value = q; }
 }
 
 /* ---------- Список брендов в сайдбаре ---------- */
@@ -1005,7 +1030,7 @@ function filtered(){
   const genderActive = f.male || f.female || f.unisex;
 
   let list = ALL.filter(p => {
-    if (activeBrand !== 'all' && p.brand !== activeBrand) return false;
+    if (activeBrand !== 'all' && normBrand(p.brand) !== normBrand(activeBrand)) return false;
     if (typeActive){
       if (f.original && !f.oil && p.type !== 'original') return false;
       if (f.oil && !f.original && p.type !== 'oil') return false;
@@ -1108,11 +1133,34 @@ function render(){
 
   if (!list.length){
     grid.innerHTML = '';
-    noRes?.classList.remove('hidden');
+    if (noRes){
+      const hasFilters = activeBrand !== 'all' || location.search.length > 1
+        || getFilters().q || getFilters().male || getFilters().female
+        || getFilters().unisex || getFilters().oil || getFilters().instock;
+      noRes.innerHTML = `
+        <div style="margin-bottom:1rem">Ничего не найдено. Измените фильтры или запрос.</div>
+        ${hasFilters ? `<button onclick="resetFilters()" style="padding:.6rem 1.4rem;border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:999px;cursor:pointer;font-size:.85rem;transition:all .2s" onmouseover="this.style.background='var(--gold)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">Сбросить фильтры</button>` : ''}`;
+      noRes.classList.remove('hidden');
+    }
     return;
   }
   noRes?.classList.add('hidden');
   grid.innerHTML = list.map(cardHtml).join('');
+}
+
+function resetFilters(){
+  activeBrand = 'all';
+  ['f-original','f-oil','f-male','f-female','f-unisex','f-instock'].forEach(id => setCheck(id, false));
+  const inp = document.getElementById('sb-search-input');
+  if (inp) inp.value = '';
+  if (history.replaceState){
+    const url = new URL(location.href);
+    url.search = '';
+    history.replaceState(null, '', url);
+  }
+  if (window._renderBrands) window._renderBrands();
+  updateBreadcrumb();
+  render();
 }
 
 /* ---------- Быстрое добавление в корзину ---------- */

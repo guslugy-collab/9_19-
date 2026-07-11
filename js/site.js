@@ -64,29 +64,15 @@ const MEGA_CATS = [
     brands: []
   },
   {
-    id: 'original',
-    icon: '💎',
-    title: 'Оригинальная',
-    sub: 'Селективная и нишевая',
-    href: 'catalog.html?type=original',
-    brands: [
-      'Amouage','Bvlgari','Byredo','Chanel','Clive Christian',
-      'Creed','De Marly','Dior','Dolce&Gabbana','Escentric Molecules',
-      'Frederic Malle','Giorgio Armani','Guerlain','Initio','Kilian',
-      'Maison Francis Kurkdjian','Montale','Parfums de Marly','Tom Ford','Versace',
-      'Xerjoff','Yves Saint Laurent','Lattafa','Rasasi',
-    ]
-  },
-  {
     id: 'oil',
     icon: '🧴',
     title: 'Масляная',
     sub: 'Концентраты, стойкость до 12ч',
     href: 'catalog.html?type=oil',
     brands: [
-      'Al Haramain','Arabian Oud','Attar Collection','Ajmal',
-      'Baccarat Rouge 540 (масло)','Black Orchid (масло)','BR540',
-      'Creed Aventus (масло)','Oud Wood (масло)','Tobacco Oud (масло)',
+      'LATTAFA PERFUMES','AJMAL','ATTAR COLLECTION','TIZIANI TERENZI',
+      'XERJOFF SOSPIRO','MEMO','BYREDO','TOM FORD',
+      'KILIAN','ESCENTRIC MOLECULE','ZIELINSKI & ROZEN','PARFUMS DE MARLY',
     ]
   },
   {
@@ -96,9 +82,9 @@ const MEGA_CATS = [
     sub: 'Для него',
     href: 'catalog.html?gender=men',
     brands: [
-      'Bleu de Chanel','Creed Aventus','Dior Sauvage','Dior Homme',
-      'Giorgio Armani Acqua','Hugo Boss','Issey Miyake','JPG Le Male',
-      'Paco Rabanne 1 Million','Tom Ford Tobacco Oud','Versace Eros','Xerjoff Naxos',
+      'DIOR','CREED','TOM FORD','PACO RABANNE',
+      'VERSACE','ARMANI','HUGO BOSS','CAROLINA HERRERA',
+      'PARFUMS DE MARLY','LOUIS VUITTON','GIVENCHY','AMOUAGE',
     ]
   },
   {
@@ -108,9 +94,9 @@ const MEGA_CATS = [
     sub: 'Для неё',
     href: 'catalog.html?gender=women',
     brands: [
-      'Burberry Her','Byredo Bal d\'Afrique','Chanel No.5','Chanel Coco Mademoiselle',
-      'Dior Miss Dior','Dior J\'adore','Guerlain Mon Guerlain','Kilian Good Girl Gone Bad',
-      'MFK Baccarat Rouge 540','Paco Rabanne Olympéa','Tom Ford Rose Prick','YSL Black Opium',
+      'CHANEL','DIOR','LANCOME','CAROLINA HERRERA',
+      'GUCCI','GIVENCHY','YSL','GUERLAIN',
+      'VICTORIA SECRET','ESCADA','CHLOE','NARCISO RODRIGUEZ',
     ]
   },
   {
@@ -120,10 +106,9 @@ const MEGA_CATS = [
     sub: 'Для него и для неё',
     href: 'catalog.html?gender=unisex',
     brands: [
-      'Byredo Gypsy Water','Clive Christian X','De Marly Layton','Escentric Molecules 01',
-      'Frederic Malle Portrait of a Lady','Initio Oud for Greatness','Maison Margiela Replica',
-      'Montale Black Aoud','Parfums de Marly Layton','Tom Ford Oud Wood',
-      'Xerjoff Alexandria II','Amouage Reflection',
+      'BYREDO','KILIAN','MAISON FRANCIS KURKDJIAN','TOM FORD',
+      'EX NIHILO','MEMO','XERJOFF SOSPIRO','INITIO PARFUMS PRIVES',
+      'MONTALE','CLIVE CHRISTIAN','ORMONDE JAYNE','ATTAR COLLECTION',
     ]
   },
   {
@@ -182,7 +167,12 @@ function renderHeader(active){
     return `<div class="mega-right-panel" data-panel="${c.id}">
       <span class="mega-section-title">Популярные бренды</span>
       <ul class="mega-brands">
-        ${c.brands.map(b=>`<li><a href="catalog.html?q=${encodeURIComponent(b)}">${b}</a></li>`).join('')}
+        ${c.brands.map(b=>{
+          const params = new URLSearchParams();
+          if (['men','women','unisex'].includes(c.id)) params.set('gender', c.id);
+          params.set('brand', b);
+          return `<li><a href="catalog.html?${params.toString()}">${b}</a></li>`;
+        }).join('')}
       </ul>
       <a href="${c.href}" class="mega-more">Смотреть всё →</a>
     </div>`;
@@ -251,7 +241,6 @@ function renderHeader(active){
     <div id="mobile-nav" class="md:hidden hidden hairline-t">
       <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-3 text-sm">
         <a href="catalog.html" class="hover:text-gold flex items-center gap-2">Весь каталог</a>
-        <a href="catalog.html?type=original" class="hover:text-gold flex items-center gap-2">Оригинальная</a>
         <a href="catalog.html?type=oil" class="hover:text-gold flex items-center gap-2">Масляная</a>
         <a href="catalog.html?gender=men" class="hover:text-gold flex items-center gap-2">Мужские</a>
         <a href="catalog.html?gender=women" class="hover:text-gold flex items-center gap-2">Женские</a>
