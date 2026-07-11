@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Опт — 9.19 PERFUME</title>
+<meta name="description" content="Оптовый прайс-лист масляной парфюмерии 9.19 PERFUME. Цена за грамм, скидки от объёма.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bg:'#0f0d0b',gold:'#b8935a',cream:'#f0ebe3'},fontFamily:{serif:['"Cormorant Garamond"','serif'],sans:['Jost','sans-serif']}}}}</script>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+#price-table tbody tr:hover{background:rgba(184,147,90,.07)}
+.q-TOP{color:#b8935a}.q-DELUX,.q-DE_LUX{color:#c8a87a}.q-PREMIUM{color:#e0c090}.q-LUX{color:#9ca3af}.q-ST{color:#6b7280}
+.gender-УНИ{color:#a5b4fc}.gender-МУЖ{color:#93c5fd}.gender-ЖЕН{color:#f9a8d4}
+</style>
+</head>
+<body data-page="opt">
+<div id="site-header"></div>
+
+<section class="max-w-4xl mx-auto px-5 pt-16 pb-8 text-center">
+  <div class="text-xs tracking-luxe text-gold mb-5 reveal">ОПТОВЫЕ УСЛОВИЯ</div>
+  <h1 class="font-serif text-5xl md:text-6xl reveal">Всё для <span class="text-gold">парфюмерного</span> бизнеса</h1>
+  <p class="mt-5 text-sm reveal" style="color:var(--muted)">WhatsApp для заказов:
+    <a href="https://wa.me/79216060303" target="_blank" rel="noopener" class="text-gold hover:underline">+7 921 606-03-03</a>
+  </p>
+</section>
+
+<!-- Товары -->
+<section class="max-w-5xl mx-auto px-5 pb-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
+  <div class="hairline p-6 reveal">
+    <div class="text-gold font-serif text-2xl mb-2">Парфюм-вода</div>
+    <ul class="text-sm flex flex-col gap-1" style="color:var(--muted)">
+      <li>1 литр — <span class="text-cream">1 300 ₽</span></li>
+      <li>10 литров — <span class="text-cream">10 000 ₽</span></li>
+      <li>100 литров — <span class="text-cream">75 000 ₽</span></li>
+    </ul>
+  </div>
+  <div class="hairline p-6 reveal">
+    <div class="text-gold font-serif text-2xl mb-2">Мини-принтер</div>
+    <ul class="text-sm flex flex-col gap-1" style="color:var(--muted)">
+      <li>Принтер для наклеек — <span class="text-cream">4 500 ₽</span></li>
+      <li>Лента для принтера — <span class="text-cream">450 ₽</span></li>
+    </ul>
+  </div>
+  <div class="hairline p-6 reveal sm:col-span-2 md:col-span-1">
+    <div class="text-gold font-serif text-2xl mb-2">Скидки на масла</div>
+    <ul class="text-sm flex flex-col gap-1" style="color:var(--muted)">
+      <li>Действует при заказе <span class="text-cream">от 10 000 ₽</span></li>
+      <li>от 50 г — <span class="text-gold">−10%</span></li>
+      <li>от 100 г — <span class="text-gold">−15%</span></li>
+      <li>от 200 г — <span class="text-gold">−20%</span></li>
+      <li>от 500 г — <span class="text-gold">−25%</span></li>
+      <li class="mt-2 text-xs">* Скидка считается только по маслам</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Прайс-лист -->
+<section class="max-w-6xl mx-auto px-5 pb-16">
+  <div class="flex flex-wrap gap-3 mb-5 items-center">
+    <h2 class="font-serif text-3xl text-gold flex-1">Прайс-лист масел</h2>
+    <input id="oil-search" type="text" placeholder="Поиск по названию или бренду..."
+      class="hairline px-4 py-2 text-sm bg-transparent w-full sm:w-72 focus:outline-none focus:border-gold"
+      style="color:var(--cream)">
+    <select id="oil-gender" class="hairline px-3 py-2 text-sm bg-transparent focus:outline-none" style="color:var(--muted)">
+      <option value="">Все</option>
+      <option value="УНИ">Унисекс</option>
+      <option value="МУЖ">Мужской</option>
+      <option value="ЖЕН">Женский</option>
+    </select>
+  </div>
+  <div class="text-xs mb-3" style="color:var(--muted)">
+    <span id="oil-count"></span> позиций
+  </div>
+  <div class="overflow-x-auto">
+  <table id="price-table" class="w-full text-sm border-collapse">
+    <thead>
+      <tr class="text-left text-xs tracking-luxe" style="color:var(--muted);border-bottom:1px solid rgba(184,147,90,.3)">
+        <th class="py-3 pr-4">БРЕНД / НАЗВАНИЕ</th>
+        <th class="py-3 pr-4">ВИД</th>
+        <th class="py-3 pr-4">ПРОИЗВОДИТЕЛЬ</th>
+        <th class="py-3 pr-4 text-right">₽/гр</th>
+        <th class="py-3">КАЧЕСТВО</th>
+      </tr>
+    </thead>
+    <tbody id="oil-tbody"></tbody>
+  </table>
+  </div>
+  <p class="mt-6 text-xs" style="color:var(--muted)">
+    Позиции <span style="opacity:.5">«нет в наличии»</span> доступны под заказ. Уточняйте в WhatsApp.
+  </p>
+  <a href="https://wa.me/79216060303" target="_blank" rel="noopener" class="btn btn-solid mt-6">Написать в WhatsApp</a>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/site.js"></script>
+<script>
+const OILS = [
+// АВТОРСКИЕ
+{b:'Авторские',n:'СОБЛАЗН (фиолетовый)',g:'УНИ',m:'Spain',p:18,q:'TOP',s:true},
+{b:'Авторские',n:'СОБЛАЗН',g:'УНИ',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Авторские',n:'НЕБЕСНЫЙ ФЕРОМОН',g:'УНИ',m:'France',p:45,q:'DELUX',s:true},
+{b:'Авторские',n:'НЕБЕСНЫЙ ФЕРОМОН',g:'УНИ',m:'IFF',p:60,q:'TOP',s:false},
+{b:'Авторские',n:'ЛЮБОВЬ И ИСКУШЕНИЕ',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Авторские',n:'КАСПИЙСКИЙ БРИЗ',g:'УНИ',m:'France',p:25,q:'LUX',s:true},
+{b:'Авторские',n:'КОКАИН',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Авторские',n:'THE EAGLE BY KHABIB',g:'УНИ',m:'France',p:25,q:'LUX',s:true},
+{b:'Авторские',n:'ТИШИНА ПУСТЫНИ',g:'УНИ',m:'France',p:25,q:'LUX',s:true},
+{b:'Авторские',n:'PRADO CARBON',g:'МУЖ',m:'Turkey',p:30,q:'DE LUX',s:true},
+{b:'Авторские',n:'GENETIC BLISS',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Авторские',n:'FRAGRANCE DU BOIS LUCIUS',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+// AFNAN
+{b:'Afnan',n:'TRIBUTE BLUE',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+{b:'Afnan',n:'TURATHI BROWN',g:'МУЖ',m:'ОАЭ',p:55,q:'TOP',s:true},
+// AQUOLINA
+{b:'Aquolina',n:'PINK SUGAR',g:'УНИ',m:'Luzi AG',p:18,q:'LUX',s:true},
+// ARABIAN OUD
+{b:'Arabian Oud',n:'ARABIAN KNIGHT',g:'МУЖ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Arabian Oud',n:'KALEMAT',g:'УНИ',m:'Turkey',p:20,q:'DE LUX',s:true},
+{b:'Arabian Oud',n:'MADAWI 40 YEARS GOLD EDITION',g:'УНИ',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Arabian Oud',n:'BELLA',g:'ЖЕН',m:'France',p:40,q:'DE LUX',s:true},
+// ARD AL ZAAFARAN
+{b:'Ard Al Zaafaran',n:'MOUSUF (усил.)',g:'УНИ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Ard Al Zaafaran',n:'MIDNIGHT OUD',g:'УНИ',m:'France',p:30,q:'DE LUX',s:false},
+{b:'Ard Al Zaafaran',n:'OUD 24 HOURS',g:'УНИ',m:'France',p:30,q:'DE LUX',s:false},
+{b:'Ard Al Zaafaran',n:'MOUSUF AZURE',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+// AVON
+{b:'Avon',n:'TODAY',g:'ЖЕН',m:'Turkey',p:20,q:'DE LUX',s:false},
+{b:'Avon',n:'LUCIA',g:'ЖЕН',m:'Turkey',p:20,q:'DE LUX',s:true},
+// AL HARAMAIN
+{b:'Al Haramain',n:'HAYATI',g:'УНИ',m:'—',p:40,q:'DE LUX',s:true},
+{b:'Al Haramain',n:'RED AFRIKAN (ОРИГИНАЛ)',g:'УНИ',m:'ОАЭ',p:30,q:'DE LUX',s:true},
+{b:'Al Haramain',n:'KASTURI',g:'УНИ',m:'Turkey',p:20,q:'DE LUX',s:true},
+{b:'Al Haramain',n:'MUSK AL GHAZAL',g:'УНИ',m:'Turkey',p:25,q:'DE LUX',s:true},
+// AL REHAB
+{b:'Al Rehab',n:'DALAL',g:'УНИ',m:'Turkey',p:20,q:'TOP',s:true},
+{b:'Al Rehab',n:'LOVELY',g:'УНИ',m:'Turkey',p:20,q:'TOP',s:true},
+{b:'Al Rehab',n:'SULTAN',g:'МУЖ',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Al Rehab',n:'SOFT',g:'УНИ',m:'Luzi AG',p:20,q:'TOP',s:true},
+// AMOUROUD
+{b:'Amouroud',n:'MIDNIGHT ROSE',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+// ABDUL SAMAD AL QURASHI
+{b:'Abdul Samad Al Qurashi',n:'RED STAR',g:'УНИ',m:'—',p:35,q:'TOP',s:true},
+{b:'Abdul Samad Al Qurashi',n:'SAFARI EXTREME',g:'МУЖ',m:'—',p:35,q:'TOP',s:true},
+{b:'Abdul Samad Al Qurashi',n:'AMBASSADOR COLLECTION',g:'УНИ',m:'—',p:30,q:'TOP',s:true},
+{b:'Abdul Samad Al Qurashi',n:'MUSK AL TAHARA',g:'УНИ',m:'—',p:35,q:'TOP',s:true},
+// ACQUA DI PARMA
+{b:'Acqua di Parma',n:'ACQUA DI PARMA COLONIA',g:'УНИ',m:'Turkey',p:30,q:'TOP',s:true},
+{b:'Acqua di Parma',n:'ESSENZA DI COLONIA',g:'МУЖ',m:'Turkey',p:30,q:'TOP',s:true},
+// ATTAR COLLECTION
+{b:'Attar Collection',n:'MUSK KASHMIR 2025',g:'УНИ',m:'Turkey',p:55,q:'DELUX',s:true},
+{b:'Attar Collection',n:'THE QUEEN OF SHEBA',g:'ЖЕН',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Attar Collection',n:'HAYATI',g:'УНИ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Attar Collection',n:'AL RAYHAN',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Attar Collection',n:'AZORA',g:'УНИ',m:'France',p:25,q:'LUX',s:true},
+{b:'Attar Collection',n:'AZORA (DE LUX)',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Attar Collection',n:'CRYSTAL LOVE for him',g:'МУЖ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Attar Collection',n:'CRYSTAL LOVE for her',g:'ЖЕН',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Attar Collection',n:'SIERRA',g:'УНИ',m:'—',p:30,q:'TOP',s:true},
+{b:'Attar Collection',n:'CAPELLA',g:'УНИ',m:'—',p:35,q:'TOP',s:true},
+{b:'Attar Collection',n:'ANNABELLA',g:'ЖЕН',m:'EPS',p:45,q:'DELUX',s:true},
+// AZZARO
+{b:'Azzaro',n:'CHROME',g:'МУЖ',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Azzaro',n:'AZZARO FEMME',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Azzaro',n:'WANTED GIRL',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+// AJMAL
+{b:'Ajmal',n:'AMBER WOOD (LUX)',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Ajmal',n:'AMBER WOOD (TOP)',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Ajmal',n:'AMBER WOOD (DE LUX)',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Ajmal',n:'AURUM',g:'УНИ',m:'Luzi AG',p:50,q:'TOP',s:true},
+{b:'Ajmal',n:'ARISTOCRAT',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Ajmal',n:'HATKORA WOOD',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Ajmal',n:'INCENSE WOOD',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Ajmal',n:'SILK MUSK',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Ajmal',n:'DREAM MARCHANT FRESH',g:'УНИ',m:'Luzi AG',p:28,q:'LUX',s:true},
+{b:'Ajmal',n:'AMBRE PIMENTE',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Ajmal',n:'WISAL',g:'ЖЕН',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Ajmal',n:'BLUE',g:'МУЖ',m:'France',p:30,q:'LUX',s:true},
+{b:'Ajmal',n:'SHADOW FOR HIM',g:'МУЖ',m:'France',p:45,q:'DELUX',s:true},
+// ALEXANDRE.J
+{b:'Alexandre.J',n:'BLACK MUSCS',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Alexandre.J',n:'MANDARINE SULTANE',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Alexandre.J',n:'ALTESSE MYSORE',g:'ЖЕН',m:'Turkey',p:35,q:'DE LUX',s:true},
+// AMOUAGE
+{b:'Amouage',n:'INTERLUDE MAN',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Amouage',n:'MEMOIR WOMAN',g:'ЖЕН',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'EPIC WOMAN',g:'ЖЕН',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Amouage',n:'BOUNDLESS',g:'УНИ',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'HONOUR MAN',g:'МУЖ',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'HONOUR WOMAN',g:'ЖЕН',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'REFLECTION MAN',g:'МУЖ',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'OPUS V',g:'УНИ',m:'France',p:38,q:'DE LUX',s:true},
+{b:'Amouage',n:'GUIDANCE',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Amouage',n:'INTERLUDE BLACK IRIS',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+// ANNA SUI
+{b:'Anna Sui',n:'LUCKY WISH',g:'ЖЕН',m:'Spain',p:18,q:'TOP',s:true},
+{b:'Anna Sui',n:'LUCKY WISH',g:'ЖЕН',m:'Luzi AG',p:22,q:'LUX',s:true},
+// ANTONIO BANDERAS
+{b:'Antonio Banderas',n:'BLUE SEDUCTION',g:'МУЖ',m:'Spain',p:18,q:'TOP',s:true},
+{b:'Antonio Banderas',n:'BLUE SEDUCTION (DE LUX)',g:'МУЖ',m:'Turkey',p:20,q:'DE LUX',s:true},
+{b:'Antonio Banderas',n:'BLUE SEDUCTION FOR HER',g:'ЖЕН',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Antonio Banderas',n:'GOLDEN SECRET FOR HER',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+// ARMAND BASI
+{b:'Armand Basi',n:'IN RED',g:'ЖЕН',m:'Turkey',p:22,q:'DE LUX',s:true},
+{b:'Armand Basi',n:'IN BLUE',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+// ARIANA GRANDE
+{b:'Ariana Grande',n:'CLOUD PINK',g:'ЖЕН',m:'Turkey',p:35,q:'DE LUX',s:true},
+// ARMANI
+{b:'Armani',n:'ACQUA DI GIO HOMME',g:'МУЖ',m:'Turkey',p:20,q:'DE LUX',s:true},
+{b:'Armani',n:'ACQUA DI GIO HOMME (France)',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Armani',n:'ACQUA DI GIO ABSOLU',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Armani',n:'SI',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Armani',n:"BECAUSE IT'S YOU",g:'ЖЕН',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Armani',n:'ACQUA DI GIOIA',g:'ЖЕН',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Armani',n:'(PRIVE) PIVOINE SUZHOU',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Armani',n:"(PRIVE) ROSE D'ARABIE",g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Armani',n:'MY WAY',g:'ЖЕН',m:'IFF',p:25,q:'TOP',s:true},
+{b:'Armani',n:'OCEAN DI GIOIA',g:'ЖЕН',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Armani',n:"(PRIVE) VETIVER D'HIVER",g:'МУЖ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Armani',n:'AMBRE ECCENTRICO',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+// EMPORIO ARMANI
+{b:'Emporio Armani',n:'IN LOVE WITH YOU',g:'ЖЕН',m:'EPS',p:22,q:'TOP',s:true},
+{b:'Emporio Armani',n:'STRONGER WITH YOU',g:'МУЖ',m:'EPS',p:25,q:'TOP',s:true},
+{b:'Emporio Armani',n:'STRONGER WITH YOU INTENSELY',g:'МУЖ',m:'EPS',p:30,q:'TOP',s:true},
+// ATELIER COLOGNE
+{b:'Atelier Cologne',n:'BERGAMOTE SOLEIL',g:'УНИ',m:'EPS',p:45,q:'TOP',s:true},
+{b:'Atelier Cologne',n:'CEDRE ATLAS',g:'УНИ',m:'EPS',p:45,q:'TOP',s:true},
+{b:'Atelier Cologne',n:'CLEMENTINE CALIFORNIA',g:'УНИ',m:'EPS',p:30,q:'TOP',s:true},
+// BALDESSARINI
+{b:'Baldessarini',n:'BALDESSARINI AMBRE',g:'МУЖ',m:'IFF',p:35,q:'TOP',s:true},
+// BENTLEY
+{b:'Bentley',n:'BENTLEY INTENSE',g:'МУЖ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+// BYREDO
+{b:'Byredo',n:'BAL D\'AFRIQUE',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Byredo',n:'BAL D\'AFRIQUE (усил.)',g:'УНИ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'OUD IMMORTEL',g:'МУЖ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'MOJAVE GHOST',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'GYPSY WATER',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'VELVET HAZE',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'BLANCHE',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'BIBLIOTHEQUE',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Byredo',n:'MIXED EMOTIONS',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Byredo',n:'MARIJUANA',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Byredo',n:'LA TULIPE',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Byredo',n:'ANIMALIQUE',g:'УНИ',m:'Robertet',p:40,q:'DE LUX',s:true},
+// BVLGARI
+{b:'Bvlgari',n:'AQUA POUR HOMME MARINE',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Bvlgari',n:'OMNIA CHRYSTALINE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Bvlgari',n:'AQVA POUR HOMME ATLANTIQVE',g:'МУЖ',m:'England',p:40,q:'PREMIUM',s:true},
+{b:'Bvlgari',n:'GYAN',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Bvlgari',n:'GARANAT',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Bvlgari',n:'TYGAR',g:'МУЖ',m:'Turkey',p:40,q:'TOP',s:true},
+{b:'Bvlgari',n:'FALKAR',g:'МУЖ',m:'Luzi AG',p:60,q:'TOP',s:true},
+{b:'Bvlgari',n:'MAN IN BLACK',g:'МУЖ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Bvlgari',n:'OMNIA CORAL',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Bvlgari',n:'AQVA AMARA',g:'МУЖ',m:'England',p:40,q:'PREMIUM',s:true},
+// BURBERRY
+{b:'Burberry',n:'MR BURBERRY',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Burberry',n:'BODY',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Burberry',n:'MY BURBERRY',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Burberry',n:'WEEKEND',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+// BOADICEA
+{b:'Boadicea the Victorious',n:'BLUE SAPPHIRE',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Boadicea the Victorious',n:'ROSE SAPPHIRE',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Boadicea the Victorious',n:'AURICA',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Boadicea the Victorious',n:'ANGELIC',g:'УНИ',m:'Luzi AG',p:38,q:'TOP',s:true},
+{b:'Boadicea the Victorious',n:'HEROINE',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Boadicea the Victorious',n:'TIGER',g:'УНИ',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Boadicea the Victorious',n:'KNIGHT OF LOVE',g:'МУЖ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Boadicea the Victorious',n:'HANUMAN',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+// BOSS / HUGO BOSS
+{b:'Hugo Boss',n:'BOSS BOTTLED INTENSE',g:'МУЖ',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Hugo Boss',n:'BOSS BOTTLED OUD',g:'МУЖ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Hugo Boss',n:'BOSS WOMAN',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'BOSS NUMBER ONE',g:'МУЖ',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'BOSS BOTTLED',g:'МУЖ',m:'Turkey',p:20,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'BOSS ALIVE',g:'ЖЕН',m:'Spain',p:20,q:'TOP',s:true},
+{b:'Hugo Boss',n:'FEMME',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'THE SCENT',g:'ЖЕН',m:'Turkey',p:22,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'HUGO WOMAN',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Hugo Boss',n:'HUGO BOSS',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+// BOTTEGA VENETA
+{b:'Bottega Veneta',n:'BOTTEGA VENETA',g:'ЖЕН',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+// BOGART
+{b:'Bogart',n:'SCENT INTENSE',g:'МУЖ',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+// BRITNEY SPEARS
+{b:'Britney Spears',n:'FANTASY',g:'ЖЕН',m:'Turkey',p:17,q:'DE LUX',s:true},
+{b:'Britney Spears',n:'MIDNIGHT FANTASY',g:'ЖЕН',m:'Turkey',p:17,q:'DE LUX',s:true},
+// BRUNELLO CUCINELLI
+{b:'Brunello Cucinelli',n:'SOGNO',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Brunello Cucinelli',n:'VENTO ARDENTE',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+// CAROLINA HERRERA
+{b:'Carolina Herrera',n:'CHIC FOR MEN',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'GOOD GIRL',g:'ЖЕН',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Carolina Herrera',n:'BAD BOY',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Carolina Herrera',n:'212 VIP WOMEN',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'212 VIP FOR MEN',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'212 FOR MEN',g:'МУЖ',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'212 FOR WOMEN',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'212 VIP ROSE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'212 SEXY FOR MEN',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Carolina Herrera',n:'MYSTERY TOBACCO',g:'УНИ',m:'Givaudan',p:35,q:'PREMIUM',s:true},
+// CALVIN KLEIN
+{b:'Calvin Klein',n:'EUPHORIA',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Calvin Klein',n:'EUPHORIA FOR MEN',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+// CARTIER
+{b:'Cartier',n:'DECLARATION',g:'МУЖ',m:'—',p:22,q:'DE LUX',s:true},
+{b:'Cartier',n:'EAU DE CARTIER',g:'УНИ',m:'—',p:22,q:'DE LUX',s:true},
+{b:'Cartier',n:'OUD SANTAL',g:'УНИ',m:'—',p:50,q:'TOP',s:true},
+{b:'Cartier',n:'EAU DE CARTIER ESSENCE DE ORANGE',g:'УНИ',m:'—',p:30,q:'TOP',s:true},
+{b:'Cartier',n:'DE LUNE',g:'ЖЕН',m:'—',p:30,q:'TOP',s:true},
+{b:'Cartier',n:'CARAT',g:'ЖЕН',m:'—',p:30,q:'TOP',s:true},
+// CHANEL
+{b:'Chanel',n:'BLEU DE CHANEL',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'CHANCE EAU FRAICHE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'EGOISTE PLATINUM',g:'МУЖ',m:'Firmenich',p:25,q:'TOP',s:true},
+{b:'Chanel',n:'GABRIELLE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'COCO MADEMOISELLE INTENSE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Chanel',n:'ALLURE HOMME SPORT',g:'МУЖ',m:'EPS',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'CHANCE (усил.)',g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'CHANEL 5',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Chanel',n:'CHANCE EAU TENDRE',g:'ЖЕН',m:'IFF',p:25,q:'TOP',s:true},
+{b:'Chanel',n:"COCO MADEMOISELLE L'EAU PRIVÉE",g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Chanel',n:'COCO MADEMOISELLE',g:'ЖЕН',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+// CHOPARD
+{b:'Chopard',n:'VETIVER D\'HAITI AU THE VERT',g:'УНИ',m:'France',p:55,q:'DELUX',s:true},
+{b:'Chopard',n:'NEROLI A LA CARDAMOME DU GUATEMALA',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+// CLIVE CHRISTIAN
+{b:'Clive Christian',n:'C FOR MEN WOODY LEATHER WITH OUDH',g:'МУЖ',m:'England',p:60,q:'PREMIUM',s:true},
+{b:'Clive Christian',n:'MATSUKITA',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Clive Christian',n:'HEDONISTIC (усил.)',g:'УНИ',m:'Turkey',p:55,q:'DE LUX',s:true},
+{b:'Clive Christian',n:'BLONDE AMBER',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Clive Christian',n:'COSMOS FLOWER',g:'ЖЕН',m:'France',p:50,q:'DE LUX',s:true},
+// CREED
+{b:'Creed',n:'AVENTUS',g:'МУЖ',m:'Givaudan',p:28,q:'LUX',s:true},
+{b:'Creed',n:'AVENTUS (DELUX)',g:'МУЖ',m:'—',p:50,q:'DELUX',s:true},
+{b:'Creed',n:'AVENTUS COLOGNE',g:'МУЖ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Creed',n:'ABSOLU AVENTUS',g:'МУЖ',m:'England',p:70,q:'PREMIUM',s:true},
+{b:'Creed',n:'AVENTUS BLACK',g:'МУЖ',m:'Turkey',p:55,q:'DE LUX',s:true},
+{b:'Creed',n:'AVENTUS FOR HER',g:'ЖЕН',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Creed',n:'SILVER',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Creed',n:'MILLESIME IMPERIAL',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Creed',n:'LOVE IN WHITE',g:'ЖЕН',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Creed',n:'VIKING',g:'МУЖ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Creed',n:'VETIVER GERANIUM',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Creed',n:'VIRGIN ISLAND WATER',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Creed',n:'QUEEN OF SILK',g:'ЖЕН',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Creed',n:'CARMINA',g:'ЖЕН',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Creed',n:'CENTAURUS',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+// DAVIDOFF
+{b:'Davidoff',n:'COOL WATER MAN',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Davidoff',n:'COOL WATER WOMAN',g:'ЖЕН',m:'Spain',p:20,q:'TOP',s:true},
+{b:'Davidoff',n:'DAVIDOFF',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Davidoff',n:'COOL WATER DEEP',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Davidoff',n:'ECHO WOMAN',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+// DIOR
+{b:'Dior',n:'FAHRENHEIT',g:'МУЖ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Dior',n:"J'ADORE",g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Dior',n:'MISS DIOR CHERIE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dior',n:'SAUVAGE',g:'МУЖ',m:'Turkey',p:50,q:'DELUX',s:true},
+{b:'Dior',n:'DIOR HOMME SPORT',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dior',n:'MISS DIOR BLOOMING BOUQUET',g:'ЖЕН',m:'England',p:25,q:'PREMIUM',s:true},
+{b:'Dior',n:'MISS DIOR LE PARFUM',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dior',n:'MIDNIGHT POISON',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dior',n:'JOY',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dior',n:'SAUVAGE ELIXIR',g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Dior',n:'EDEN-ROC',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+// DOLCE & GABBANA
+{b:'Dolce & Gabbana',n:'LIGHT BLUE FOR MEN',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'LIGHT BLUE WOMEN',g:'ЖЕН',m:'Spain',p:20,q:'TOP',s:true},
+{b:'Dolce & Gabbana',n:'THE ONE MEN',g:'МУЖ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'THE ONE WOMEN',g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'THE ONLY ONE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:"L'IMPERATRICE 3",g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'VELVET DESERT OUD',g:'МУЖ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Dolce & Gabbana',n:'K BY D&G (KING)',g:'МУЖ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'LIGHT BLUE FOREVER',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Dolce & Gabbana',n:'Q BY D&G (QUEEN)',g:'ЖЕН',m:'England',p:30,q:'PREMIUM',s:true},
+// DKNY
+{b:'DKNY',n:'BE DELICIOUS (усил.)',g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+// EX NIHILO
+{b:'Ex Nihilo',n:'NARCOTIQUE FLEUR',g:'УНИ',m:'Robertet',p:40,q:'TOP',s:true},
+{b:'Ex Nihilo',n:'NIGHT CALL',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Ex Nihilo',n:'SWEET MORPHINE',g:'УНИ',m:'Luzi AG',p:35,q:'TOP',s:true},
+{b:'Ex Nihilo',n:'LUST IN PARADISE',g:'ЖЕН',m:'Luzi AG',p:25,q:'LUX',s:true},
+{b:'Ex Nihilo',n:'GOLD IMMORTALS',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Ex Nihilo',n:'THE HEDONIST (усил.)',g:'УНИ',m:'Turkey',p:55,q:'DELUX',s:true},
+{b:'Ex Nihilo',n:'CITIZEN X',g:'УНИ',m:'England',p:45,q:'PREMIUM',s:true},
+{b:'Ex Nihilo',n:'BLUE TALISMAN',g:'УНИ',m:'—',p:45,q:'DE LUX',s:true},
+{b:'Ex Nihilo',n:'VENENUM KISS',g:'УНИ',m:'England',p:50,q:'PREMIUM',s:true},
+{b:'Ex Nihilo',n:'IRIS PORCELANA',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+// ESCENTRIC MOLECULE
+{b:'Escentric Molecules',n:'ESCENTRIC 01 (усил.)',g:'УНИ',m:'Turkey',p:50,q:'DELUX',s:true},
+{b:'Escentric Molecules',n:'ESCENTRIC 02',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'ESCENTRIC 02 Black',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'ESCENTRIC 03',g:'УНИ',m:'England',p:60,q:'PREMIUM',s:true},
+{b:'Escentric Molecules',n:'ESCENTRIC 04',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'ESCENTRIC 05',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Escentric Molecules',n:'MOLECULE 02',g:'УНИ',m:'—',p:60,q:'TOP',s:true},
+{b:'Escentric Molecules',n:'MOLECULE 05',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'MOLECULES 01 + MANDARIN',g:'УНИ',m:'EPS',p:30,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'MOLECULES 01 + PATCHOULI',g:'УНИ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'MOLECULES 01 + BLACK TEA',g:'УНИ',m:'Turkey',p:40,q:'DELUX',s:true},
+{b:'Escentric Molecules',n:'MOLECULES 01 + GUAIAC WOOD',g:'УНИ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Escentric Molecules',n:'MOLECULES 01 + GINGER',g:'УНИ',m:'Turkey',p:45,q:'DE LUX',s:true},
+// ESSENTIAL PARFUMS
+{b:'Essential Parfums',n:'BOIS IMPERIAL',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Essential Parfums',n:'ROSE MAGNETIC',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+// FREDERIC MALLE
+{b:'Frederic Malle',n:'PORTRAIT OF A LADY',g:'ЖЕН',m:'Luzi AG',p:60,q:'TOP',s:true},
+// GIVENCHY
+{b:'Givenchy',n:'ANGEL & DEMONS 2025',g:'ЖЕН',m:'EPS',p:25,q:'DE LUX',s:true},
+{b:'Givenchy',n:"L'INTERDIT",g:'ЖЕН',m:'France',p:25,q:'TOP',s:true},
+{b:'Givenchy',n:'BLUE LABEL',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Givenchy',n:'GENTLEMAN 2017',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Givenchy',n:'IRRESISTIBLE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Givenchy',n:'ORGANZA',g:'ЖЕН',m:'Luzi AG',p:35,q:'TOP',s:true},
+// GUCCI
+{b:'Gucci',n:'BAMBOO',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Gucci',n:'GUCCI GUILTY ABSOLUTE',g:'МУЖ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Gucci',n:'GUILTY',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Gucci',n:'FLORA 2024',g:'ЖЕН',m:'EPS',p:25,q:'DE LUX',s:true},
+{b:'Gucci',n:'GUCCI OUD',g:'УНИ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Gucci',n:'BLOOM',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Gucci',n:'FLORA GORGEOUS JASMINE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+// GUERLAIN
+{b:'Guerlain',n:'OUD ESSENTIEL',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Guerlain',n:'CHAMPS ELYSEES',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Guerlain',n:'AQUA ALLEGORIA PASSIFLORA',g:'ЖЕН',m:'Firmenich',p:35,q:'TOP',s:true},
+{b:'Guerlain',n:'AQUA ALLEGORIA MANDARINE BASILIC',g:'ЖЕН',m:'Firmenich',p:40,q:'TOP',s:true},
+{b:'Guerlain',n:'AQUA ALLEGORIA GINGER PICCANTE',g:'УНИ',m:'Firmenich',p:40,q:'TOP',s:true},
+{b:'Guerlain',n:'AQUA ALLEGORIA BERGAMOTE CALABRIA',g:'УНИ',m:'Firmenich',p:35,q:'TOP',s:true},
+{b:'Guerlain',n:'MON GUERLAIN',g:'ЖЕН',m:'EPS',p:25,q:'DE LUX',s:true},
+// HFC
+{b:'Haute Fragrance Company',n:'D.INTRIGUE',g:'ЖЕН',m:'—',p:50,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'DIAMOND IN THE SKY',g:'ЖЕН',m:'Turkey',p:35,q:'TOP',s:true},
+{b:'Haute Fragrance Company',n:'ROYAL POVER',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'BEAUTIFUL & WILD',g:'ЖЕН',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'WEAR LOVE EVERYWHERE',g:'ЖЕН',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'DIVINE BLOSSOM',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'WRAP ME IN DREAMS',g:'ЖЕН',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'VOODOO CHIC',g:'ЖЕН',m:'Luzi AG',p:50,q:'TOP',s:true},
+{b:'Haute Fragrance Company',n:'SUNMUSK',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Haute Fragrance Company',n:'INDIAN VENUS',g:'ЖЕН',m:'Turkey',p:40,q:'DE LUX',s:true},
+// HERMES
+{b:'Hermès',n:"TERRE D'HERMES",g:'МУЖ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Hermès',n:'HERMESSENCE AGAR',g:'УНИ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Hermès',n:"TWILLY D'HERMES",g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+// INITIO
+{b:'Initio',n:'PSYCHEDELIC LOVE',g:'УНИ',m:'Turkey',p:40,q:'DELUX',s:true},
+{b:'Initio',n:'OUD FOR GREATNESS',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Initio',n:'REHAB',g:'УНИ',m:'—',p:40,q:'TOP',s:true},
+{b:'Initio',n:'OUD FOR HAPPINESS',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Initio',n:'MUSK THERAPY',g:'УНИ',m:'Turkey',p:45,q:'DELUX',s:true},
+{b:'Initio',n:'ATOMIC ROSE',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Initio',n:'SIDE EFFECT',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Initio',n:'ABSOLUTE APHRODISIAC',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Initio',n:'PARAGON',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Initio',n:'NARCOTIC DELIGHT',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Initio',n:'MAGNETIC BLEND 8',g:'УНИ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+// JO MALONE
+{b:'Jo Malone',n:'BLACKBERRY & BAY',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Jo Malone',n:'BRONZE WOOD & LEATHER',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Jo Malone',n:'MYRRH & TONKA',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Jo Malone',n:'POMEGRANATE NOIR',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Jo Malone',n:'ENGLISH PEAR & FREESIA',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Jo Malone',n:'PEONY & BLUSH SUEDE',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Jo Malone',n:'WHITE JASMINE & MINT',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Jo Malone',n:'LIME BASIL & MANDARIN',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Jo Malone',n:'WOOD SAGE & SEA SALT (усил.)',g:'УНИ',m:'EPS',p:40,q:'TOP',s:true},
+{b:'Jo Malone',n:'OUD & BERGAMOT',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Jo Malone',n:'DARK AMBER & GINGER LILY',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+// JULIETTE HAS A GUN
+{b:'Juliette Has a Gun',n:'NOT A PERFUME SUPERDOSE',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Juliette Has a Gun',n:'VANILLA VIBES',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+// KAJAL
+{b:'Kajal',n:'DAHAB',g:'ЖЕН',m:'Turkey',p:40,q:'DE LUX',s:true},
+{b:'Kajal',n:'LAMAR',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+{b:'Kajal',n:'ALMAZ',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+// KENZO
+{b:'Kenzo',n:'FLOWER',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Kenzo',n:'AQUA KENZO POUR FEMME',g:'ЖЕН',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Kenzo',n:'AQUA KENZO POUR HOMME',g:'МУЖ',m:'France',p:20,q:'DE LUX',s:true},
+// KILIAN
+{b:'Kilian',n:'GOOD GIRL GONE BAD',g:'ЖЕН',m:'England',p:50,q:'PREMIUM',s:true},
+{b:'Kilian',n:'INTOXICATED',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Kilian',n:'BACK TO BLACK',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Kilian',n:'LIAISONS DANGEREUSES',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Kilian',n:'VODKA ON THE ROCKS',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Kilian',n:'LOVE DON\'T BE SHY',g:'ЖЕН',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Kilian',n:'BEYOND LOVE',g:'ЖЕН',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Kilian',n:'BLACK PHANTOM',g:'УНИ',m:'France',p:45,q:'DELUX',s:true},
+{b:'Kilian',n:"ANG' SHARE",g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Kilian',n:'APPLE BRANDY ON THE ROCKS',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Kilian',n:'ROSES ON ICE',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Kilian',n:'SMOKING HOT',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Kilian',n:'BAD BOYS',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+// LACOSTE
+{b:'Lacoste',n:'EAU DE LACOSTE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lacoste',n:'L.12.12 BLUE',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lacoste',n:'L.12.12 WHITE',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Lacoste',n:'ESSENTIAL',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lacoste',n:'TOUCH OF PINK',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lacoste',n:'ESSENTIAL SPORT',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+// LANCOME
+{b:'Lancôme',n:'HYPNOSE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lancôme',n:'LA VIE EST BELLE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lancôme',n:'IDOLE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Lancôme',n:'MIRACLE',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+// LATTAFA
+{b:'Lattafa',n:'ANA ABIYEDH',g:'УНИ',m:'France',p:18,q:'LUX',s:true},
+{b:'Lattafa',n:'YARA',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Lattafa',n:'YARA CANDY',g:'ЖЕН',m:'France',p:25,q:'DELUX',s:true},
+{b:'Lattafa',n:'KHAMRAH',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Lattafa',n:'RAGHBA',g:'УНИ',m:'Luzi AG',p:20,q:'LUX',s:true},
+{b:'Lattafa',n:'ATLAS',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Lattafa',n:'TERIAQ',g:'УНИ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Lattafa',n:'TAMIMA',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Lattafa',n:'CONFIDENTIAL PRIVATE GOLD',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Lattafa',n:'MAYAR',g:'УНИ',m:'France',p:35,q:'DELUX',s:true},
+{b:'Lattafa',n:'LIAM',g:'УНИ',m:'ОАЭ',p:50,q:'PREMIUM',s:true},
+// LE LABO
+{b:'Le Labo',n:'SANTAL 33',g:'УНИ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Le Labo',n:'ANOTHER 13',g:'УНИ',m:'Seluz',p:45,q:'TOP',s:true},
+{b:'Le Labo',n:'GAIAC 10 TOKYO',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+// LOUIS VUITTON
+{b:'Louis Vuitton',n:'ORAGE',g:'УНИ',m:'England',p:70,q:'PREMIUM',s:true},
+{b:'Louis Vuitton',n:"L'IMMENSITE",g:'МУЖ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'OMBRE NOMADE',g:'УНИ',m:'England',p:70,q:'PREMIUM',s:true},
+{b:'Louis Vuitton',n:'AFTERNOON SWIM',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+{b:'Louis Vuitton',n:'METEORE',g:'МУЖ',m:'Luzi AG',p:55,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'PUR OUD',g:'УНИ',m:'Luzi AG',p:55,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'ON THE BEACH',g:'УНИ',m:'Luzi AG',p:50,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'FLEUR DU DESERT',g:'УНИ',m:'Luzi AG',p:50,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'IMAGINATION (усил.)',g:'МУЖ',m:'Turkey',p:65,q:'DELUX',s:true},
+{b:'Louis Vuitton',n:'STELLAR TIMES',g:'УНИ',m:'EPS',p:50,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'MATIERE NOIRE',g:'ЖЕН',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Louis Vuitton',n:'PACIFIC CHILL',g:'УНИ',m:'Turkey',p:40,q:'DE LUX',s:true},
+{b:'Louis Vuitton',n:'SYMPHONY (усил.)',g:'УНИ',m:'EPS',p:70,q:'DE LUX',s:true},
+{b:'Louis Vuitton',n:'AMBRE LEVANT 2026',g:'УНИ',m:'Turkey',p:55,q:'DE LUX',s:true},
+// MFK
+{b:'Maison Francis Kurkdjian',n:'A LA ROSE',g:'УНИ',m:'Luzi AG',p:35,q:'TOP',s:true},
+{b:'Maison Francis Kurkdjian',n:'BACCARAT ROUGE 540',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Maison Francis Kurkdjian',n:'BACCARAT ROUGE 540 (Givaudan)',g:'УНИ',m:'Givaudan',p:25,q:'PREMIUM',s:true},
+{b:'Maison Francis Kurkdjian',n:'AMYRIS HOMME Extrait',g:'МУЖ',m:'Turkey',p:35,q:'DELUX',s:true},
+{b:'Maison Francis Kurkdjian',n:'GENTLE FLUIDITY GOLD',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Maison Francis Kurkdjian',n:'GRAND SOIR',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Maison Francis Kurkdjian',n:'OUD SATIN MOOD',g:'УНИ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Maison Francis Kurkdjian',n:'AQUA CELESTIA',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+// MANCERA
+{b:'Mancera',n:'INSTANT CRUSH',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Mancera',n:'CEDRAT BOISE',g:'УНИ',m:'EPS',p:40,q:'DE LUX',s:true},
+{b:'Mancera',n:'RED TOBACCO',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Mancera',n:'ETERNAL WOOD',g:'УНИ',m:'France',p:50,q:'DE LUX',s:true},
+// MARC-ANTOINE BARROIS
+{b:'Marc-Antoine Barrois',n:'GANYMEDE',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Marc-Antoine Barrois',n:'ENCELADE',g:'УНИ',m:'Luzi AG',p:50,q:'TOP',s:true},
+{b:'Marc-Antoine Barrois',n:'B 683',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Marc-Antoine Barrois',n:'GANYMEDE EXTRAIT',g:'УНИ',m:'France',p:55,q:'DE LUX',s:true},
+{b:'Marc-Antoine Barrois',n:'TILIA (усил.)',g:'УНИ',m:'Turkey',p:60,q:'DE LUX',s:true},
+// MEMO
+{b:'Memo',n:'AFRICAN ROSE',g:'УНИ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+{b:'Memo',n:'RUSSIAN LEATHER',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Memo',n:'FRENCH LEATHER',g:'УНИ',m:'Luzi AG',p:38,q:'TOP',s:true},
+{b:'Memo',n:'AFRICAN LEATHER',g:'УНИ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Memo',n:'ITALIAN LEATHER',g:'УНИ',m:'EPS',p:40,q:'TOP',s:true},
+{b:'Memo',n:'IRISH LEATHER',g:'УНИ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+{b:'Memo',n:'MARFA',g:'УНИ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+{b:'Memo',n:'OCEAN LEATHER',g:'УНИ',m:'Luzi AG',p:38,q:'TOP',s:true},
+{b:'Memo',n:'SINTRA',g:'УНИ',m:'EPS',p:35,q:'DE LUX',s:true},
+// MONTALE
+{b:'Montale',n:'ROSES MUSK',g:'ЖЕН',m:'Givaudan',p:35,q:'PREMIUM',s:true},
+{b:'Montale',n:'INTENSE CAFE',g:'УНИ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Montale',n:'CHOCOLATE GREEDY',g:'УНИ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Montale',n:'STARRY NIGHT',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Montale',n:'SOLEIL DE CAPRI',g:'УНИ',m:'Turkey',p:30,q:'DE LUX',s:true},
+// NARCISO RODRIGUEZ
+{b:'Narciso Rodriguez',n:'NARCISO ROUGE',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Narciso Rodriguez',n:'PURE MUSK FOR HER',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Narciso Rodriguez',n:'FOR HIM BLEU NOIR EDP',g:'МУЖ',m:'Givaudan',p:35,q:'PREMIUM',s:true},
+// NASOMATTO
+{b:'Nasomatto',n:'BLACK AFGANO',g:'УНИ',m:'Luzi AG',p:40,q:'LUX',s:true},
+{b:'Nasomatto',n:'NUDIFLORUM',g:'УНИ',m:'Luzi AG',p:40,q:'LUX',s:true},
+{b:'Nasomatto',n:'FANTOMAS',g:'УНИ',m:'Luzi AG',p:45,q:'LUX',s:true},
+{b:'Nasomatto',n:'BARAONDA',g:'УНИ',m:'Luzi AG',p:45,q:'LUX',s:true},
+// NISHANE
+{b:'Nishane',n:'HACIVAT',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Nishane',n:'HUNDRED SILENT WAYS',g:'УНИ',m:'—',p:40,q:'TOP',s:true},
+// ORMONDE JAYNE
+{b:'Ormonde Jayne',n:'MONTABACO',g:'УНИ',m:'IFF',p:55,q:'TOP',s:true},
+{b:'Ormonde Jayne',n:'MONTABACO INTENSIVO',g:'УНИ',m:'Firmenich',p:45,q:'TOP',s:true},
+{b:'Ormonde Jayne',n:'MONTABACO VERANO',g:'УНИ',m:'IFF',p:70,q:'TOP',s:true},
+{b:'Ormonde Jayne',n:'DAMASK',g:'УНИ',m:'Robertet',p:50,q:'DE LUX',s:true},
+{b:'Ormonde Jayne',n:'RIO',g:'УНИ',m:'Robertet',p:50,q:'DELUX',s:true},
+// ORTO PARISI
+{b:'Orto Parisi',n:'MEGAMARE',g:'УНИ',m:'France',p:60,q:'DE LUX',s:true},
+{b:'Orto Parisi',n:'CUOIUM',g:'УНИ',m:'Luzi AG',p:40,q:'LUX',s:true},
+{b:'Orto Parisi',n:'TERRONI',g:'УНИ',m:'Luzi AG',p:50,q:'TOP',s:true},
+// PACO RABANNE
+{b:'Paco Rabanne',n:'OLYMPIA',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'PURE XS',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'INVICTUS',g:'МУЖ',m:'Turkey',p:30,q:'DELUX',s:true},
+{b:'Paco Rabanne',n:'INVICTUS AQUA',g:'МУЖ',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'ONE MILLION',g:'МУЖ',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'ONE MILLION LUCKY',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'LADY MILLION',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:'Paco Rabanne',n:'BLACK XS L\'EXCES FOR HIM',g:'МУЖ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Paco Rabanne',n:'PHANTOM',g:'МУЖ',m:'France',p:20,q:'DE LUX',s:true},
+// PARFUMS DE MARLY
+{b:'Parfums de Marly',n:'DELINA',g:'ЖЕН',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'PEGASUS',g:'МУЖ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'LAYTON',g:'УНИ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'KALAN',g:'УНИ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'GALLOWAY',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'HEROD',g:'МУЖ',m:'Givaudan',p:50,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'ALTHAIR',g:'МУЖ',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+{b:'Parfums de Marly',n:'SEDLEY',g:'УНИ',m:'Turkey',p:30,q:'DELUX',s:true},
+{b:'Parfums de Marly',n:'PERSEUS',g:'МУЖ',m:'Robertet',p:45,q:'DE LUX',s:true},
+{b:'Parfums de Marly',n:'HALTANE',g:'УНИ',m:'Robertet',p:55,q:'DE LUX',s:true},
+{b:'Parfums de Marly',n:'VALAYA',g:'ЖЕН',m:'EPS',p:50,q:'DE LUX',s:true},
+// ROJA DOVE
+{b:'Roja Dove',n:'ELYSIUM POUR HOMME',g:'МУЖ',m:'—',p:60,q:'TOP',s:true},
+{b:'Roja Dove',n:'OLIGARCH',g:'МУЖ',m:'—',p:50,q:'TOP',s:true},
+{b:'Roja Dove',n:'ENIGMA',g:'ЖЕН',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Roja Dove',n:'ELIXIR POUR FEMME ESSENCE',g:'ЖЕН',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Roja Dove',n:'ISOLA BLUE',g:'УНИ',m:'IFF',p:55,q:'TOP',s:true},
+{b:'Roja Dove',n:'DANGER POUR HOMME',g:'МУЖ',m:'Turkey',p:40,q:'DELUX',s:true},
+// TIZIANA TERENZI
+{b:'Tiziana Terenzi',n:'ANDROMEDA',g:'УНИ',m:'Turkey',p:35,q:'DE LUX',s:true},
+{b:'Tiziana Terenzi',n:'KIRKE',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Tiziana Terenzi',n:'CASSIOPEA',g:'ЖЕН',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tiziana Terenzi',n:'DIONISIO',g:'УНИ',m:'Luzi AG',p:45,q:'TOP',s:true},
+{b:'Tiziana Terenzi',n:'BIANCO PURO',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Tiziana Terenzi',n:'NERO OUDH',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Tiziana Terenzi',n:'ORION',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tiziana Terenzi',n:'GUMIN',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+// TOM FORD
+{b:'Tom Ford',n:'BLACK ORCHID',g:'ЖЕН',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'OUD WOOD',g:'МУЖ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'OMBRE LEATHER 2026',g:'УНИ',m:'Turkey',p:50,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'SOLEIL BLANC',g:'УНИ',m:'Luzi AG',p:30,q:'TOP',s:true},
+{b:'Tom Ford',n:'TUSCAN LEATHER',g:'МУЖ',m:'IFF',p:40,q:'TOP',s:true},
+{b:'Tom Ford',n:'WHITE PATCHOULI',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Tom Ford',n:'FOUGERE D\'ARGENT',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'BEAU DE JOUR',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'TOBACCO VANILLA (усил.)',g:'УНИ',m:'Turkey',p:35,q:'DELUX',s:true},
+{b:'Tom Ford',n:'LOST CHERRY 2026',g:'УНИ',m:'France',p:45,q:'DELUX',s:true},
+{b:'Tom Ford',n:'NEROLI PORTOFINO',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Tom Ford',n:'OUD MINERALE',g:'УНИ',m:'Givaudan',p:35,q:'SuperLux',s:true},
+{b:'Tom Ford',n:'METALLIQUE',g:'ЖЕН',m:'Givaudan',p:45,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'SOLE DI POSITANO',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'ROSE PRICK',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'BITTER PEACH',g:'УНИ',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+{b:'Tom Ford',n:'NOIR',g:'МУЖ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'GREY VETIVER',g:'МУЖ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'MANDARINO DI AMALFI',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'EBENE FUME',g:'УНИ',m:'France',p:35,q:'DE LUX',s:true},
+{b:'Tom Ford',n:'WHITE SUEDE',g:'ЖЕН',m:'Givaudan',p:40,q:'PREMIUM',s:true},
+// VERSACE
+{b:'Versace',n:'VERSACE MAN EAU FRAICHE',g:'МУЖ',m:'Turkey',p:25,q:'TOP',s:true},
+{b:'Versace',n:'DYLAN BLUE WOMAN',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'BRIGHT CRYSTAL',g:'ЖЕН',m:'Turkey',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'BRIGHT CRYSTAL ABSOLU',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'EROS FLAME',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'EROS',g:'МУЖ',m:'Turkey',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'VERSACE POUR HOMME',g:'МУЖ',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'YELLOW DIAMONDS',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:'Versace',n:'EROS ENERGY',g:'МУЖ',m:'France',p:40,q:'DELUX',s:true},
+// VERTUS
+{b:'Vertus',n:"NARCOS'IS",g:'УНИ',m:'England',p:60,q:'PREMIUM',s:true},
+{b:'Vertus',n:'SOLE PATCHOULI',g:'УНИ',m:'England',p:50,q:'PREMIUM',s:true},
+// VICTORIA SECRET
+{b:"Victoria's Secret",n:'BOMBSHELL',g:'ЖЕН',m:'France',p:22,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'EAU SO SEXY (усил.)',g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'LOVE STAR',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'BOMBSHELL BEACH',g:'ЖЕН',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'BOMBSHELL PARADISE',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'BOMBSHELL WILD FLOWER',g:'ЖЕН',m:'France',p:25,q:'DE LUX',s:true},
+{b:"Victoria's Secret",n:'SCANDALOUS 2025',g:'ЖЕН',m:'France',p:30,q:'DE LUX',s:true},
+// VIKTOR & ROLF
+{b:'Viktor & Rolf',n:'FLOWERBOMB',g:'ЖЕН',m:'Luzi AG',p:35,q:'TOP',s:true},
+{b:'Viktor & Rolf',n:'SPICEBOMB',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+// XERJOFF SOSPIRO
+{b:'Xerjoff Sospiro',n:'ACCENTO',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Xerjoff Sospiro',n:'SOPRANO',g:'УНИ',m:'Turkey',p:35,q:'TOP',s:true},
+{b:'Xerjoff Sospiro',n:'ERBA PURA',g:'УНИ',m:'Spain',p:30,q:'TOP',s:true},
+{b:'Xerjoff Sospiro',n:'DIAPASON',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+{b:'Xerjoff Sospiro',n:'ALEXANDRIA',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Xerjoff Sospiro',n:'MORE THAN WORDS',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+{b:'Xerjoff Sospiro',n:'OPERA',g:'УНИ',m:'Luzi AG',p:35,q:'TOP',s:true},
+{b:'Xerjoff Sospiro',n:'GRAN BALLO',g:'ЖЕН',m:'EPS',p:55,q:'DELUX',s:true},
+{b:'Xerjoff Sospiro',n:'XJ 1861 NAXOS',g:'УНИ',m:'Turkey',p:45,q:'DE LUX',s:true},
+{b:'Xerjoff Sospiro',n:'VIBRATO',g:'УНИ',m:'Luzi AG',p:40,q:'TOP',s:true},
+// YSL
+{b:'YSL',n:'BLACK OPIUM',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'YSL',n:"L'HOMME",g:'МУЖ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'YSL',n:'LIBRE',g:'ЖЕН',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'YSL',n:'MYSLF',g:'МУЖ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+// ZARKOPERFUME
+{b:'Zarkoperfume',n:'PINK MOLECULE 090.09',g:'УНИ',m:'Givaudan',p:30,q:'PREMIUM',s:true},
+{b:'Zarkoperfume',n:'PURPLE MOLECULE 070.07',g:'УНИ',m:'France',p:40,q:'DE LUX',s:true},
+// ZIELINSKI & ROZEN
+{b:'Zielinski & Rozen',n:'BLACK PEPPER',g:'УНИ',m:'—',p:45,q:'TOP',s:true},
+{b:'Zielinski & Rozen',n:'FICTION',g:'УНИ',m:'England',p:45,q:'PREMIUM',s:true},
+{b:'Zielinski & Rozen',n:'NEROLI & GRAPEFRUIT VETIVER',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Zielinski & Rozen',n:'SANDALWOOD & CEDARWOOD',g:'УНИ',m:'France',p:30,q:'DE LUX',s:true},
+{b:'Zielinski & Rozen',n:'VANILLA BLEND',g:'УНИ',m:'Turkey',p:45,q:'DE LUX',s:true},
+{b:'Zielinski & Rozen',n:'LEATHER, SANDALWOOD, AMBER',g:'УНИ',m:'France',p:45,q:'DE LUX',s:true},
+{b:'Zielinski & Rozen',n:'TOBACCO, VETIVER & AMBER',g:'УНИ',m:'Germany',p:30,q:'TOP',s:true},
+// АРАБСКИЕ РАЗНОЕ
+{b:'Арабские',n:'ZAM ZAM COOL',g:'УНИ',m:'Turkey',p:15,q:'DE LUX',s:true},
+{b:'Арабские',n:'JANNET EL FIRDAUS',g:'УНИ',m:'Luzi AG',p:15,q:'LUX',s:true},
+{b:'Арабские',n:'JANNET FIRDAUS WHITE',g:'УНИ',m:'France',p:20,q:'DE LUX',s:true},
+{b:'Арабские',n:'MUKHALLAT ASGHARALI',g:'УНИ',m:'Luzi AG',p:30,q:'LUX',s:true},
+{b:'Арабские',n:'ЧЁРНЫЙ КАМЕНЬ',g:'УНИ',m:'Turkey',p:25,q:'DE LUX',s:true},
+{b:'Арабские',n:'MUSK TAHARA POMEGRANATE',g:'ЖЕН',m:'Turkey',p:30,q:'DE LUX',s:true},
+// МОНО ДЛЯ ДИФФУЗОРОВ
+{b:'Моно (диффузоры)',n:'ЛАВАНДА',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'РОЗА',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'КЛУБНИКА',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'КОФЕ',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'ЛИМОН',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'ИГРИСТЫЙ АПЕЛЬСИН',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'ГРАНАТ',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'ВАНИЛЬ',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'ДИКИЙ ЛЕС',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'МОРСКОЙ ЦИТРУС',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'МОРСКОЙ БРИЗ',g:'УНИ',m:'—',p:10,q:'LUX',s:true},
+{b:'Моно (диффузоры)',n:'КРИД АВЕНТУС',g:'УНИ',m:'—',p:12,q:'ECO',s:true},
+];
+
+const qColor = q => {
+  const m = {'PREMIUM':'#e0c090','TOP':'#b8935a','DELUX':'#c8a87a','DE LUX':'#c8a87a','LUX':'#9ca3af','SuperLux':'#e0c090','ECO':'#6b7280','ST':'#6b7280'}[q];
+  return m || '#9ca3af';
+};
+const gColor = g => ({'УНИ':'#a5b4fc','МУЖ':'#93c5fd','ЖЕН':'#f9a8d4'}[g]||'#9ca3af');
+
+let filtered = [...OILS];
+function render(){
+  const q = document.getElementById('oil-search').value.trim().toLowerCase();
+  const g = document.getElementById('oil-gender').value;
+  filtered = OILS.filter(o=>{
+    if (g && o.g !== g) return false;
+    if (q && !(o.b.toLowerCase().includes(q)||o.n.toLowerCase().includes(q))) return false;
+    return true;
+  });
+  document.getElementById('oil-count').textContent = filtered.length;
+  document.getElementById('oil-tbody').innerHTML = filtered.map(o=>`
+    <tr style="border-bottom:1px solid rgba(255,255,255,.05);${o.s?'':'opacity:.45'}">
+      <td class="py-2 pr-4">
+        <span class="text-xs" style="color:var(--muted)">${o.b}</span><br>
+        <span style="color:var(--cream)">${o.n}</span>${o.s?'':' <span class="text-xs" style="color:var(--muted)">(нет в наличии)</span>'}
+      </td>
+      <td class="py-2 pr-4 text-xs" style="color:${gColor(o.g)}">${o.g}</td>
+      <td class="py-2 pr-4 text-xs" style="color:var(--muted)">${o.m}</td>
+      <td class="py-2 pr-4 text-right font-serif text-base" style="color:${qColor(o.q)}">${o.p}₽</td>
+      <td class="py-2 text-xs" style="color:${qColor(o.q)}">${o.q}</td>
+    </tr>`).join('');
+}
+document.getElementById('oil-search').addEventListener('input', render);
+document.getElementById('oil-gender').addEventListener('change', render);
+render();
+</script>
+</body>
+</html>

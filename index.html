@@ -22,25 +22,29 @@
 <div id="site-header"></div>
 
 <!-- HERO -->
-<section class="relative overflow-hidden">
-  <div class="absolute inset-0" style="background:radial-gradient(ellipse at 50% 0%, rgba(184,147,90,.14), transparent 60%)"></div>
-  <div class="max-w-6xl mx-auto px-5 pt-24 pb-20 md:pt-32 md:pb-28 relative text-center">
-    <div class="text-xs md:text-sm tracking-luxe text-gold mb-6 reveal">ПАРФЮМЕРНЫЙ ДОМ · МАХАЧКАЛА</div>
-    <h1 class="font-serif text-6xl md:text-8xl leading-none reveal">
+<section class="relative overflow-hidden" style="height:75vh;min-height:500px">
+  <video autoplay muted loop playsinline
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0">
+    <source src="video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="absolute inset-0 pointer-events-none" style="background:linear-gradient(to bottom, rgba(15,13,11,.15) 0%, rgba(15,13,11,0) 40%, rgba(15,13,11,.6) 100%);z-index:1"></div>
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-5" style="z-index:2;padding-top:70px">
+    <div class="hero-tag text-xs md:text-sm tracking-luxe text-gold mb-4">ПАРФЮМЕРНЫЙ ДОМ · МАХАЧКАЛА</div>
+    <span class="hero-divider mb-6"></span>
+    <h1 class="hero-title font-serif text-6xl md:text-8xl leading-none" style="text-shadow:0 2px 20px rgba(0,0,0,.8)">
       <span class="text-gold">9.19</span> PERFUME
     </h1>
-    <p class="max-w-xl mx-auto mt-7 text-base md:text-lg leading-relaxed reveal" style="color:var(--muted)">
+    <p class="hero-sub max-w-xl mx-auto mt-7 text-base md:text-lg leading-relaxed" style="color:var(--muted);text-shadow:0 2px 12px rgba(0,0,0,.9)">
       Оригинальная парфюмерия и масляная.<br>Прямые поставки из Турции и ОАЭ.
     </p>
-    <div class="flex flex-wrap gap-4 justify-center mt-9 reveal">
+    <div class="hero-btns flex flex-wrap gap-4 justify-center mt-9">
       <a href="catalog.html" class="btn btn-solid">Смотреть каталог</a>
-      <a href="https://t.me/PERFUME_9_19" target="_blank" rel="noopener" class="btn">Написать в Telegram</a>
+      <a href="https://t.me/Pf_9_19" target="_blank" rel="noopener" class="btn">Написать в Telegram</a>
     </div>
-    <!-- Статистика -->
-    <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-16 reveal">
-      <div class="hairline py-6"><div class="font-serif text-4xl text-gold">200+</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">ароматов</div></div>
-      <div class="hairline py-6"><div class="font-serif text-4xl text-gold">5000₽</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">опт от / 30 гр</div></div>
-      <div class="hairline py-6"><div class="font-serif text-4xl text-gold">2</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">страны поставки</div></div>
+    <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-12">
+      <div class="hero-stat hairline py-5" style="background:rgba(15,13,11,.45)"><div class="font-serif text-4xl text-gold">200+</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">ароматов</div></div>
+      <div class="hero-stat hairline py-5" style="background:rgba(15,13,11,.45)"><div class="font-serif text-4xl text-gold">5000₽</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">опт от / 30 гр</div></div>
+      <div class="hero-stat hairline py-5" style="background:rgba(15,13,11,.45)"><div class="font-serif text-4xl text-gold">2</div><div class="text-xs mt-1 tracking-wide" style="color:var(--muted)">страны поставки</div></div>
     </div>
   </div>
 </section>
@@ -73,12 +77,12 @@
 <!-- БРЕНДЫ (бегущая строка) -->
 <section class="hairline-t hairline-b py-8 overflow-hidden">
   <div class="brands-track flex gap-16 items-center" style="white-space:nowrap">
-    <span>Amouage</span><span>Creed</span><span>Tom Ford</span><span>Maison Francis Kurkdjian</span>
-    <span>Lattafa</span><span>Dior</span><span>Chanel</span><span>Giorgio Armani</span>
-    <span>Bvlgari</span><span>Versace</span><span>Guerlain</span><span>Xerjoff</span>
-    <span>Amouage</span><span>Creed</span><span>Tom Ford</span><span>Maison Francis Kurkdjian</span>
-    <span>Lattafa</span><span>Dior</span><span>Chanel</span><span>Giorgio Armani</span>
-    <span>Bvlgari</span><span>Versace</span><span>Guerlain</span><span>Xerjoff</span>
+    <a href="catalog.html?brand=AMOUAGE" class="hover:text-gold transition-colors">Amouage</a><a href="catalog.html?brand=CREED" class="hover:text-gold transition-colors">Creed</a><a href="catalog.html?brand=TOM%20FORD" class="hover:text-gold transition-colors">Tom Ford</a><a href="catalog.html?brand=MAISON%20FRANCIS%20KURKDJIAN" class="hover:text-gold transition-colors">Maison Francis Kurkdjian</a>
+    <a href="catalog.html?brand=LATTAFA%20PERFUMES" class="hover:text-gold transition-colors">Lattafa</a><a href="catalog.html?brand=DIOR" class="hover:text-gold transition-colors">Dior</a><a href="catalog.html?brand=CHANEL" class="hover:text-gold transition-colors">Chanel</a><a href="catalog.html?brand=ARMANI" class="hover:text-gold transition-colors">Giorgio Armani</a>
+    <a href="catalog.html?brand=BVLGARI" class="hover:text-gold transition-colors">Bvlgari</a><a href="catalog.html?brand=VERSACE" class="hover:text-gold transition-colors">Versace</a><a href="catalog.html?brand=GUERLAIN" class="hover:text-gold transition-colors">Guerlain</a><a href="catalog.html?brand=XERJOFF%20SOSPIRO" class="hover:text-gold transition-colors">Xerjoff</a>
+    <a href="catalog.html?brand=AMOUAGE" class="hover:text-gold transition-colors">Amouage</a><a href="catalog.html?brand=CREED" class="hover:text-gold transition-colors">Creed</a><a href="catalog.html?brand=TOM%20FORD" class="hover:text-gold transition-colors">Tom Ford</a><a href="catalog.html?brand=MAISON%20FRANCIS%20KURKDJIAN" class="hover:text-gold transition-colors">Maison Francis Kurkdjian</a>
+    <a href="catalog.html?brand=LATTAFA%20PERFUMES" class="hover:text-gold transition-colors">Lattafa</a><a href="catalog.html?brand=DIOR" class="hover:text-gold transition-colors">Dior</a><a href="catalog.html?brand=CHANEL" class="hover:text-gold transition-colors">Chanel</a><a href="catalog.html?brand=ARMANI" class="hover:text-gold transition-colors">Giorgio Armani</a>
+    <a href="catalog.html?brand=BVLGARI" class="hover:text-gold transition-colors">Bvlgari</a><a href="catalog.html?brand=VERSACE" class="hover:text-gold transition-colors">Versace</a><a href="catalog.html?brand=GUERLAIN" class="hover:text-gold transition-colors">Guerlain</a><a href="catalog.html?brand=XERJOFF%20SOSPIRO" class="hover:text-gold transition-colors">Xerjoff</a>
   </div>
 </section>
 
@@ -144,7 +148,7 @@
         <span class="faq-icon text-gold text-xl leading-none flex-shrink-0">+</span>
       </button>
       <div class="faq-a hidden px-6 pb-5 text-sm leading-relaxed" style="color:var(--muted)">
-        Добавьте товары в корзину и нажмите «Оформить в Telegram» — список и сумма подставятся автоматически. Или просто напишите нам в <a href="https://t.me/PERFUME_9_19" class="text-gold" target="_blank" rel="noopener">@PERFUME_9_19</a> — поможем с выбором и оформлением.
+        Добавьте товары в корзину и нажмите «Оформить в Telegram» — список и сумма подставятся автоматически. Или просто напишите нам в <a href="https://t.me/Pf_9_19" class="text-gold" target="_blank" rel="noopener">@Pf_9_19</a> — поможем с выбором и оформлением.
       </div>
     </div>
 
@@ -199,7 +203,7 @@
         <div class="text-xs tracking-luxe text-gold mb-4">СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ</div>
         <h2 class="font-serif text-4xl md:text-5xl leading-tight">Скидка 10%<br>на первый заказ</h2>
         <p class="mt-5 text-sm leading-relaxed" style="color:var(--muted)">Напишите нам в Telegram с кодовым словом <span class="text-gold font-medium">«ПЕРВЫЙ»</span> — и получите персональную скидку 10% на первый заказ.</p>
-        <a href="https://t.me/PERFUME_9_19?text=%D0%9F%D0%95%D0%A0%D0%92%D0%AB%D0%99" target="_blank" rel="noopener" class="btn btn-solid mt-8 self-start">Получить скидку</a>
+        <a href="https://t.me/Pf_9_19?text=%D0%9F%D0%95%D0%A0%D0%92%D0%AB%D0%99" target="_blank" rel="noopener" class="btn btn-solid mt-8 self-start">Получить скидку</a>
       </div>
       <div class="hidden md:flex items-center justify-center p-10" style="border-left:0.5px solid var(--border)">
         <div class="text-center">
@@ -216,7 +220,7 @@
   <div class="hairline-strong text-center py-16 px-5 reveal" style="background:var(--bg-2)">
     <h2 class="font-serif text-4xl md:text-5xl">Не нашли свой аромат?</h2>
     <p class="mt-4 max-w-lg mx-auto text-sm leading-relaxed" style="color:var(--muted)">Напишите нам в Telegram — подберём аромат по вашим предпочтениям и рассчитаем оптовую цену.</p>
-    <a href="https://t.me/PERFUME_9_19" target="_blank" rel="noopener" class="btn btn-solid mt-8">Написать в Telegram</a>
+    <a href="https://t.me/Pf_9_19" target="_blank" rel="noopener" class="btn btn-solid mt-8">Написать в Telegram</a>
   </div>
 </section>
 

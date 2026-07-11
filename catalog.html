@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Каталог ароматов — 9.19 PERFUME</title>
 <meta name="description" content="Каталог оригинальной и масляной парфюмерии 9.19 PERFUME. Фильтры по типу, полу и бренду, поиск в реальном времени. Заказ через Telegram.">
-<meta property="og:title" content="Каталог ароматов — 9.19 PERFUME">
-<meta property="og:description" content="Оригиналы и масляная парфюмерия. Фильтры, поиск, опт и розница.">
-<meta property="og:image" content="images/placeholder.svg">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,45 +12,340 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bg:'#0f0d0b',gold:'#b8935a',cream:'#f0ebe3'},fontFamily:{serif:['"Cormorant Garamond"','serif'],sans:['Jost','sans-serif']}}}}</script>
 <link rel="stylesheet" href="css/styles.css">
+<style>
+/* ===== Каталог — двухколоночный layout ===== */
+.cat-layout{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:0;
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 1.25rem 4rem;
+  align-items:start;
+}
+@media(max-width:768px){
+  .cat-layout{grid-template-columns:1fr}
+}
+
+/* ===== Левая панель ===== */
+.cat-sidebar{
+  border-right:.5px solid var(--border);
+  padding:1.5rem 1rem 2rem 0;
+  position:sticky;
+  top:64px;
+  max-height:calc(100vh - 64px);
+  overflow-y:auto;
+}
+.cat-sidebar::-webkit-scrollbar{width:4px}
+.cat-sidebar::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:4px}
+
+.sb-back{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.75rem;color:var(--muted);text-decoration:none;
+  margin-bottom:1rem;transition:color .2s;
+}
+.sb-back:hover{color:var(--gold)}
+
+.sb-section-title{
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;justify-content:between;
+  margin-bottom:.5rem;margin-top:1.25rem;
+}
+.sb-section-title span{flex:1}
+
+/* Список брендов */
+.brand-list{list-style:none;padding:0;margin:0}
+.brand-list li{display:flex;align-items:center;justify-content:space-between}
+.brand-list a{
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+  padding:.38rem .5rem;font-size:.8rem;color:var(--muted);
+  text-decoration:none;border-left:2px solid transparent;
+  transition:color .18s,border-color .18s,background .18s;
+  border-radius:0 2px 2px 0;
+}
+.brand-list a:hover{color:var(--cream);background:rgba(184,147,90,.05)}
+.brand-list a.active{color:var(--gold);border-left-color:var(--gold);background:rgba(184,147,90,.07)}
+.brand-list .count{
+  font-size:.7rem;color:var(--muted);
+  min-width:20px;text-align:right;font-variant-numeric:tabular-nums;
+}
+.brand-list a.active .count{color:var(--gold)}
+
+.sb-show-more{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.74rem;color:var(--gold);background:none;border:none;
+  cursor:pointer;padding:.3rem .5rem;margin-top:.25rem;
+  transition:opacity .2s;
+}
+.sb-show-more:hover{opacity:.75}
+
+/* Чекбокс-фильтры */
+.cb-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.3rem}
+.cb-item{display:flex;align-items:center;gap:.55rem;cursor:pointer;padding:.25rem .5rem;border-radius:2px;transition:background .18s}
+.cb-item:hover{background:rgba(184,147,90,.05)}
+.cb-item input[type=checkbox]{
+  width:15px;height:15px;cursor:pointer;flex-shrink:0;
+  accent-color:var(--gold);
+}
+.cb-label{font-size:.8rem;color:var(--muted);cursor:pointer;flex:1}
+.cb-item:has(:checked) .cb-label{color:var(--cream)}
+
+/* ===== Правая часть ===== */
+.cat-main{padding:1.5rem 0 0 1.5rem}
+@media(max-width:768px){.cat-main{padding:1rem 0 0 0}}
+
+/* Хлебные крошки */
+.breadcrumb{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.74rem;color:var(--muted);margin-bottom:1rem;
+}
+.breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:var(--border-strong)}
+
+/* Панель управления */
+.cat-toolbar{
+  display:flex;align-items:center;gap:.75rem;
+  margin-bottom:1.25rem;flex-wrap:wrap;
+}
+.sort-select{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.78rem;color:var(--muted);
+}
+.sort-select select{
+  background:var(--bg-2);border:.5px solid var(--border);
+  color:var(--cream);padding:.35rem .65rem;font-size:.78rem;
+  border-radius:2px;outline:none;cursor:pointer;
+}
+.sort-select select:focus{border-color:var(--border-strong)}
+
+.view-toggle{
+  display:flex;align-items:center;gap:2px;margin-left:auto;
+}
+.view-btn{
+  width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+  border:.5px solid var(--border);border-radius:2px;cursor:pointer;
+  color:var(--muted);background:none;transition:all .2s;
+}
+.view-btn:hover,.view-btn.active{color:var(--gold);border-color:var(--border-strong);background:rgba(184,147,90,.06)}
+
+.cat-count{font-size:.76rem;color:var(--muted);margin-left:.5rem}
+
+/* ===== Сетка карточек ===== */
+#cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--border);
+}
+#cat-grid.view-list{grid-template-columns:1fr}
+#cat-grid.view-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:1100px){#cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:860px){#cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){#cat-grid{grid-template-columns:1fr}}
+
+/* ===== Карточка товара (floralodor-стиль) ===== */
+.pcard{
+  background:var(--bg-2);display:flex;flex-direction:column;
+  cursor:pointer;transition:background .2s;position:relative;
+}
+.pcard:hover{background:var(--bg3,#1a1612)}
+
+.pcard-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bg)}
+.pcard-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.pcard:hover .pcard-img{transform:scale(1.04)}
+
+.pcard-badge{
+  position:absolute;top:.6rem;left:.6rem;z-index:2;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:.25rem .55rem;border-radius:2px;
+  background:var(--gold);color:var(--bg);font-weight:500;
+}
+.pcard-badge.new{background:transparent;color:var(--gold);border:.5px solid var(--gold)}
+
+.pcard-body{padding:.75rem .85rem 1rem;display:flex;flex-direction:column;flex:1}
+.pcard-brand{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.pcard-name{font-size:.88rem;font-weight:500;color:var(--cream);line-height:1.35;flex:1}
+
+/* Рейтинг */
+.pcard-rating{display:flex;align-items:center;gap:.3rem;margin-top:.3rem}
+.stars{display:flex;gap:1px}
+.star{width:11px;height:11px;fill:var(--muted);opacity:.4}
+.star.filled{fill:#f5a623;opacity:1}
+.rating-val{font-size:.68rem;color:var(--muted)}
+
+/* Статус наличия */
+.stock-badge{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-size:.72rem;margin-top:.45rem;
+  font-weight:500;
+}
+.stock-badge.in{color:#4caf72}
+.stock-badge.out{color:var(--muted)}
+.stock-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.stock-badge.in .stock-dot{background:#4caf72}
+.stock-badge.out .stock-dot{background:var(--muted)}
+
+/* Цена */
+.pcard-footer{display:flex;align-items:center;justify-content:space-between;margin-top:.6rem}
+.pcard-price{font-size:1rem;font-weight:500;color:var(--cream);font-variant-numeric:tabular-nums}
+.pcard-price sup{font-size:.55em;vertical-align:super;line-height:0}
+.pcard-price-note{font-size:.65rem;color:var(--muted);margin-top:.05rem}
+
+/* Кнопка корзины */
+.cart-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--gold);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background .2s,transform .15s;
+  color:var(--bg);
+}
+.cart-btn:hover{background:var(--gold-2);transform:scale(1.08)}
+.cart-btn.out-btn{
+  background:transparent;border:.5px solid var(--border);color:var(--muted);
+}
+.cart-btn.out-btn:hover{border-color:var(--border-strong)}
+
+/* Список-режим карточки */
+#cat-grid.view-list .pcard{flex-direction:row}
+#cat-grid.view-list .pcard-img-wrap{width:110px;aspect-ratio:unset;flex-shrink:0}
+#cat-grid.view-list .pcard-body{padding:.85rem 1rem}
+
+/* Mobile sidebar toggle */
+.sb-toggle{
+  display:none;align-items:center;gap:.5rem;
+  padding:.55rem 1rem;font-size:.78rem;
+  border:.5px solid var(--border);border-radius:2px;
+  background:none;color:var(--muted);cursor:pointer;margin-bottom:1rem;
+}
+@media(max-width:768px){
+  .sb-toggle{display:flex}
+  .cat-sidebar{
+    position:static;max-height:none;
+    border-right:none;border-bottom:.5px solid var(--border);
+    padding-right:0;padding-bottom:1rem;margin-bottom:1rem;
+  }
+  .cat-sidebar.hidden-mobile{display:none}
+}
+
+/* Поиск в сайдбаре */
+.sb-search{
+  display:flex;align-items:center;gap:.45rem;
+  background:rgba(255,255,255,.04);border:.5px solid var(--border);
+  border-radius:2px;padding:0 .65rem;margin-bottom:.75rem;
+}
+.sb-search input{
+  flex:1;background:none;border:none;outline:none;
+  font-size:.78rem;color:var(--cream);padding:.45rem 0;
+}
+.sb-search input::placeholder{color:var(--muted)}
+</style>
 </head>
 <body data-page="catalog">
 <div id="site-header"></div>
 
-<section class="max-w-6xl mx-auto px-5 pt-12 pb-6">
-  <h1 class="font-serif text-5xl md:text-6xl">Каталог</h1>
-  <p id="whole-note" class="hidden mt-3 text-sm text-gold">Показаны позиции, доступные оптом. Минимальный оптовый заказ — от 5000₽.</p>
+<div class="cat-layout">
 
-  <!-- Поиск + сортировка -->
-  <div class="flex flex-col md:flex-row gap-3 mt-8">
-    <input id="search" class="input md:flex-1" type="search" placeholder="Поиск по названию или бренду…" autocomplete="off">
-    <select id="brand-filter" class="input md:w-56"></select>
-    <select id="sort" class="input md:w-52">
-      <option value="default">Сортировка</option>
-      <option value="price-asc">Сначала дешевле</option>
-      <option value="price-desc">Сначала дороже</option>
-      <option value="new">Сначала новинки</option>
-    </select>
-  </div>
+  <!-- ======= ЛЕВАЯ ПАНЕЛЬ ======= -->
+  <aside class="cat-sidebar" id="sidebar">
 
-  <!-- Чипсы-фильтры -->
-  <div class="flex flex-wrap gap-2 mt-4">
-    <button class="chip active" data-filter="type:all">Все</button>
-    <button class="chip" data-filter="type:original">Оригиналы</button>
-    <button class="chip" data-filter="type:oil">Масляные</button>
-    <span class="w-px self-stretch mx-1" style="background:var(--border)"></span>
-    <button class="chip" data-filter="gender:male">Мужские</button>
-    <button class="chip" data-filter="gender:female">Женские</button>
-    <button class="chip" data-filter="gender:unisex">Унисекс</button>
-    <button class="chip" data-filter="gender:all">Любой пол</button>
-  </div>
+    <!-- Поиск -->
+    <div class="sb-search">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:var(--muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="search" id="sb-search-input" placeholder="Поиск по каталогу…" autocomplete="off">
+    </div>
 
-  <div id="count" class="mt-6 text-sm" style="color:var(--muted)"></div>
-</section>
+    <!-- Список брендов -->
+    <div class="sb-section-title">
+      <span>Бренды</span>
+    </div>
+    <ul class="brand-list" id="brand-list"></ul>
+    <button class="sb-show-more" id="brand-show-more" onclick="toggleMoreBrands()">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      <span id="brand-more-label">Ещё бренды</span>
+    </button>
 
-<!-- Сетка товаров -->
-<section class="max-w-6xl mx-auto px-5 pb-16">
-  <div id="grid" class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"></div>
-</section>
+    <!-- Тип -->
+    <div class="sb-section-title" style="margin-top:1.5rem">
+      <span>Тип парфюмерии</span>
+    </div>
+    <ul class="cb-list">
+      <li><label class="cb-item"><input type="checkbox" id="f-original" onchange="applyFilters()"><span class="cb-label">Оригинальная</span></label></li>
+      <li><label class="cb-item"><input type="checkbox" id="f-oil" onchange="applyFilters()"><span class="cb-label">Масляная</span></label></li>
+    </ul>
+
+    <!-- Пол -->
+    <div class="sb-section-title" style="margin-top:1.25rem">
+      <span>Пол</span>
+    </div>
+    <ul class="cb-list">
+      <li><label class="cb-item"><input type="checkbox" id="f-male" onchange="applyFilters()"><span class="cb-label">Мужские</span></label></li>
+      <li><label class="cb-item"><input type="checkbox" id="f-female" onchange="applyFilters()"><span class="cb-label">Женские</span></label></li>
+      <li><label class="cb-item"><input type="checkbox" id="f-unisex" onchange="applyFilters()"><span class="cb-label">Унисекс</span></label></li>
+    </ul>
+
+    <!-- Наличие -->
+    <div class="sb-section-title" style="margin-top:1.25rem">
+      <span>Наличие</span>
+    </div>
+    <ul class="cb-list">
+      <li><label class="cb-item"><input type="checkbox" id="f-instock" onchange="applyFilters()"><span class="cb-label">Есть в наличии</span></label></li>
+    </ul>
+
+  </aside>
+
+  <!-- ======= ПРАВАЯ ЧАСТЬ ======= -->
+  <main class="cat-main">
+
+    <!-- Хлебные крошки -->
+    <div class="breadcrumb">
+      <a href="index.html">Главная</a>
+      <span>›</span>
+      <span id="bc-current" style="color:var(--cream)">Весь каталог</span>
+    </div>
+
+    <!-- Мобильный тоггл сайдбара -->
+    <button class="sb-toggle" onclick="toggleSidebar()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 6h16M4 12h10M4 18h7"/></svg>
+      Фильтры
+    </button>
+
+    <!-- Тулбар -->
+    <div class="cat-toolbar">
+      <div class="sort-select">
+        <span>Сортировать по:</span>
+        <select id="sort-select" onchange="applyFilters()">
+          <option value="default">По умолчанию</option>
+          <option value="az">От А до Я</option>
+          <option value="za">От Я до А</option>
+          <option value="price-asc">Дешевле</option>
+          <option value="price-desc">Дороже</option>
+          <option value="new">Новинки</option>
+        </select>
+      </div>
+      <span class="cat-count" id="cat-count"></span>
+      <div class="view-toggle">
+        <button class="view-btn active" id="vb-grid4" onclick="setView('grid4',this)" title="4 в ряд">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </button>
+        <button class="view-btn" id="vb-grid2" onclick="setView('grid2',this)" title="2 в ряд">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="8" height="18"/><rect x="13" y="3" width="8" height="18"/></svg>
+        </button>
+        <button class="view-btn" id="vb-list" onclick="setView('list',this)" title="Список">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Сетка -->
+    <div id="cat-grid"></div>
+
+    <div id="no-results" class="hidden" style="padding:4rem 0;text-align:center;color:var(--muted);font-size:.9rem">
+      Ничего не найдено. Измените фильтры или запрос.
+    </div>
+
+  </main>
+</div>
 
 <!-- Модалка товара -->
 <div id="product-modal" class="modal" onclick="if(event.target===this)closeProduct()">
