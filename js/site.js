@@ -182,7 +182,7 @@ function renderHeader(active){
     return `<div class="mega-right-panel" data-panel="${c.id}">
       <span class="mega-section-title">Популярные бренды</span>
       <ul class="mega-brands">
-        ${c.brands.map(b=>`<li><a href="catalog.html?type=${c.id}&brand=${encodeURIComponent(b)}">${b}</a></li>`).join('')}
+        ${c.brands.map(b=>`<li><a href="catalog.html?q=${encodeURIComponent(b)}">${b}</a></li>`).join('')}
       </ul>
       <a href="${c.href}" class="mega-more">Смотреть всё →</a>
     </div>`;

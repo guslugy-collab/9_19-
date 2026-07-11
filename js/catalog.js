@@ -1017,7 +1017,8 @@ function filtered(){
     if (f.instock && !p.in_stock) return false;
     if (f.q){
       const hay = (p.name + ' ' + p.brand).toLowerCase();
-      if (!hay.includes(f.q)) return false;
+      const words = f.q.split(/\s+/).filter(Boolean);
+      if (!words.every(w => hay.includes(w))) return false;
     }
     return true;
   });
