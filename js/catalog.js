@@ -1113,7 +1113,6 @@ function cardHtml(p){
       ${stockBadge}
       <div class="pcard-footer">
         <div>
-          <div class="pcard-price">${multi?'от ':''} ${priceHtml(price)}</div>
           <div class="pcard-price-note">${p.type==='oil'?'масляная · ':''}${genderLabel(p.gender)}</div>
         </div>
         ${cartBtnHtml}
