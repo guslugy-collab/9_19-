@@ -366,6 +366,20 @@ select.input{ appearance:none; cursor:pointer; }
 }
 .header-search input::placeholder{ color:var(--muted); }
 .header-search svg{ color:var(--muted); flex-shrink:0; }
+.header-search input{ min-width:0; }
+
+/* На телефонах верхняя строка поиска прячется — поиск доступен в мобильном меню */
+@media (max-width:767px){
+  #desktop-search{ display:none; }
+  #header-row{ padding-left:.75rem; padding-right:.75rem; gap:.5rem; }
+  #header-row .catalog-btn{ padding-left:.7rem; padding-right:.7rem; }
+}
+
+/* Планшетный диапазон — шапка компактнее, поиск уже, чтобы всё умещалось */
+@media (min-width:768px) and (max-width:900px){
+  #header-row{ gap:.6rem; }
+  #desktop-search{ max-width:200px; }
+}
 
 /* ======= FAQ аккордеон ======= */
 .faq-item{ transition:background .25s; }

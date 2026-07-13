@@ -182,7 +182,7 @@ function renderHeader(active){
   <div class="hairline-b sticky top-0 z-50" style="background:rgba(15,13,11,.92);backdrop-filter:blur(12px);position:relative">
 
     <!-- Основная строка шапки -->
-    <div class="max-w-7xl mx-auto px-5 h-[64px] flex items-center gap-4">
+    <div id="header-row" class="max-w-7xl mx-auto px-5 h-[64px] flex items-center gap-4">
 
       <!-- Логотип -->
       <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
@@ -199,7 +199,7 @@ function renderHeader(active){
       </button>
 
       <!-- Поиск -->
-      <div class="header-search" style="flex:1;max-width:520px">
+      <div id="desktop-search" class="header-search" style="flex:1;max-width:520px">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="search" placeholder="Поиск аромата или бренда…" autocomplete="off"
           oninput="headerSearch(this.value)" onkeydown="if(event.key==='Enter')headerSearchGo(this.value)">
@@ -240,6 +240,11 @@ function renderHeader(active){
     <!-- Мобильная навигация -->
     <div id="mobile-nav" class="md:hidden hidden hairline-t">
       <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-3 text-sm">
+        <div class="header-search" style="max-width:none;margin-bottom:.25rem">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" placeholder="Поиск аромата или бренда…" autocomplete="off"
+            oninput="headerSearch(this.value)" onkeydown="if(event.key==='Enter')headerSearchGo(this.value)">
+        </div>
         <a href="catalog.html" class="hover:text-gold flex items-center gap-2">Весь каталог</a>
         <a href="catalog.html?type=oil" class="hover:text-gold flex items-center gap-2">Масляная</a>
         <a href="catalog.html?gender=men" class="hover:text-gold flex items-center gap-2">Мужские</a>
@@ -276,12 +281,11 @@ function renderFooter(){
         <a href="https://t.me/${SITE.telegram}" target="_blank" rel="noopener" class="hover:text-gold">Telegram @${SITE.telegram}</a>
         ${wa}
         <span>${SITE.city}</span>
-        <a href="privacy.html" class="hover:text-gold mt-2 text-xs">Политика конфиденциальности</a>
       </div>
     </div>
     <div class="hairline-t">
       <div class="max-w-6xl mx-auto px-5 py-5 text-xs flex flex-col sm:flex-row gap-2 justify-between" style="color:var(--muted)">
-        <span>© 2026 9.19 PERFUME. Реквизиты — заглушка.</span>
+        <span>© 2026 9.19 PERFUME.</span>
         <span>Сайт-каталог. Заказ — через Telegram.</span>
       </div>
     </div>
@@ -324,10 +328,6 @@ function renderCart(){
 function buildOrderMsg(){
   const cart = getCart();
   if (!cart.length) return null;
-  if (!document.getElementById('cart-consent').checked){
-    const w = document.getElementById('consent-warn'); if (w) w.style.display = 'block';
-    return null;
-  }
   const val = id => (document.getElementById(id)?.value || '').trim();
   const name = val('ord-name'), phone = val('ord-phone'), city = val('ord-city');
   const method = document.querySelector('input[name="ord-method"]:checked')?.value || 'Доставка';
@@ -441,11 +441,6 @@ function mountChrome(active){
             </div>
             <input id="ord-city" type="text" placeholder="Город (для доставки)" class="cart-field">
           </div>
-          <label class="flex items-start gap-2 text-xs mb-1 cursor-pointer" style="color:var(--muted)">
-            <input type="checkbox" id="cart-consent" class="mt-0.5 accent-[color:var(--gold)]">
-            <span>Согласен на обработку персональных данных для оформления заказа</span>
-          </label>
-          <p id="consent-warn" class="text-xs mb-3" style="display:none;color:#c98">Отметьте согласие, чтобы продолжить</p>
           <button onclick="checkoutTelegram()" class="btn btn-solid w-full">Оформить в Telegram</button>
           ${SITE.whatsapp ? `<button onclick="checkoutWhatsApp()" class="btn w-full mt-2" style="border-color:#25D366;color:#25D366">Оформить в WhatsApp</button>` : ''}
         </div>
