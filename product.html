@@ -1236,8 +1236,19 @@ function metersHtml(p){
 
 let ALL = [], product = null, currentVariant = 0, qty = 1;
 
-function init(){
-  ALL = PRODUCTS_INLINE;
+async function loadAll(){
+  if (location.protocol === 'file:') return PRODUCTS_INLINE;
+  try{
+    const res = await fetch('data/products.json', { cache:'no-store' });
+    if (!res.ok) throw new Error();
+    return await res.json();
+  }catch(e){
+    return PRODUCTS_INLINE;
+  }
+}
+
+async function init(){
+  ALL = await loadAll();
 
   const id = new URLSearchParams(location.search).get('id');
   product = ALL.find(p => p.id === id) || null;
