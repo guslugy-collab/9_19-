@@ -158,7 +158,7 @@ function renderHeader(active){
         <span class="mega-section-title">Оптовые закупки</span>
         <p style="font-size:.84rem;color:var(--muted);line-height:1.7;max-width:400px">
           Минимальный заказ — от 5000₽.<br>
-          Прямые поставки из Турции и ОАЭ.<br>
+          Прямые поставки из 6 стран Европы и ОАЭ.<br>
           Индивидуальные условия для постоянных партнёров.
         </p>
         <a href="opt.html" class="mega-more">Подробнее об опте →</a>
@@ -262,7 +262,7 @@ function renderFooter(){
     <div class="max-w-6xl mx-auto px-5 py-14 grid gap-10 md:grid-cols-3">
       <div>
         <div class="font-serif text-2xl mb-3"><span class="text-gold">9.19</span> PERFUME</div>
-        <p class="text-sm leading-relaxed" style="color:var(--muted)">Оригинальная и масляная парфюмерия. Прямые поставки из Турции и ОАЭ. ${SITE.city}.</p>
+        <p class="text-sm leading-relaxed" style="color:var(--muted)">Оригинальная и масляная парфюмерия. Прямые поставки из 6 стран Европы и ОАЭ. ${SITE.city}.</p>
       </div>
       <div class="text-sm flex flex-col gap-2" style="color:var(--muted)">
         <span class="text-gold tracking-luxe text-xs mb-1">РАЗДЕЛЫ</span>
