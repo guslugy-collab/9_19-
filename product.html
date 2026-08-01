@@ -1358,19 +1358,34 @@ function buildProductHtml(p){
       ${metersHtml(p)}
 
       <div class="price-block">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);line-height:1.1">Цена — по запросу</div>
-        <div style="font-size:.85rem;color:var(--muted);margin-top:.4rem">Напишите в Telegram — пришлём актуальный прайс и оформим заказ.</div>
+        <div class="price-main" id="price-display">${moneyHtml(p.variants[0].price)}</div>
+        <div class="price-wholesale" id="wholesale-display">Оптовая цена: <strong>${money(p.variants[0].price_wholesale ?? p.variants[0].price)}</strong></div>
       </div>
 
       <span class="variant-label">Объём</span>
       <div class="variant-btns">${variants}</div>
 
+      <div class="qty-block">
+        <span class="qty-label">Количество</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="prodQty(-1)">−</button>
+          <div class="qty-val" id="qty-display">1</div>
+          <button class="qty-btn" onclick="prodQty(1)">+</button>
+        </div>
+      </div>
+
       <div class="cta-block">
-        <a class="btn-tg" href="${tgLink(`Здравствуйте! Хочу узнать цену и заказать: ${p.brand} ${p.name}`)}" target="_blank" rel="noopener">
+        <button class="btn-cart" onclick="addToCartCurrent()" ${p.in_stock?'':'disabled'}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H2"/>
+          </svg>
+          ${p.in_stock ? 'Добавить в корзину' : 'Нет в наличии'}
+        </button>
+        <a class="btn-tg" href="${tgLink(`Здравствуйте! Хочу заказать: ${p.brand} ${p.name}`)}" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:#2AABEE">
             <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
           </svg>
-          Узнать цену в Telegram
+          Написать в Telegram
         </a>
         ${typeof SITE!=='undefined' && SITE.whatsapp ? `
         <a class="btn-wa" href="https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Здравствуйте! Хочу заказать: '+p.brand+' '+p.name)}" target="_blank" rel="noopener">
@@ -1457,8 +1472,8 @@ function buildProductHtml(p){
 
   <!-- Липкий бар покупки (моб.) -->
   <div class="sticky-buy">
-    <div class="sb-price" style="font-size:.95rem">Цена по запросу</div>
-    <button id="sb-btn" onclick="window.open('${tgLink(`Здравствуйте! Хочу узнать цену и заказать: ${p.brand} ${p.name}`)}','_blank')">Узнать в Telegram</button>
+    <div class="sb-price" id="sb-price">${moneyHtml(p.variants[0].price)}</div>
+    <button id="sb-btn" onclick="addToCartCurrent()" ${p.in_stock?'':'disabled'}>${p.in_stock?'В корзину':'Нет в наличии'}</button>
   </div>`;
 }
 
@@ -1483,6 +1498,7 @@ function relatedCard(p){
       <div class="pcard-name">${p.name}</div>
       ${stock}
       <div class="pcard-footer">
+        <div class="pcard-price">${multi?'от ':''} ${priceStr}</div>
         <button class="pcart-btn${p.in_stock?'':' out'}"
           onclick="event.stopPropagation();${p.in_stock?`quickAdd('${p.id}')`:''}"
           ${p.in_stock?'':'disabled'}>
@@ -1505,7 +1521,16 @@ function renderNotFound(){
 
 /* ======================== Взаимодействие ======================== */
 function selectVariant(i){
-  currentVariant = i;
+  currentVariant = i; qty = 1;
+  const v = product.variants[i];
+  const r = Math.floor(v.price), k = Math.round((v.price - r) * 100);
+  document.getElementById('price-display').innerHTML =
+    new Intl.NumberFormat('ru-RU').format(r) + `<sup>${String(k).padStart(2,'0')}</sup> ₽`;
+  document.getElementById('wholesale-display').innerHTML =
+    `Оптовая цена: <strong>${money(v.price_wholesale ?? v.price)}</strong>`;
+  document.getElementById('qty-display').textContent = qty;
+  const sb = document.getElementById('sb-price');
+  if (sb) sb.innerHTML = new Intl.NumberFormat('ru-RU').format(r) + `<sup>${String(k).padStart(2,'0')}</sup> ₽`;
   document.querySelectorAll('[data-var]').forEach(b =>
     b.classList.toggle('active', +b.dataset.var === i));
 }
