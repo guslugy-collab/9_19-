@@ -11,7 +11,6 @@ catalog.html     — каталог: фильтры, поиск, сортиро�
 about.html       — о магазине
 contacts.html    — контакты
 delivery.html    — доставка и оплата (черновик — заменить текст)
-privacy.html     — политика конфиденциальности (заглушка)
 data/products.json — БАЗА ТОВАРОВ (правится вручную)
 js/site.js       — шапка/подвал/корзина/Telegram + конфиг SITE
 js/catalog.js    — рендер каталога, фильтры, модалка
@@ -51,6 +50,5 @@ powershell -ExecutionPolicy Bypass -File serve.ps1
 
 - [ ] Заменить демо-товары в `products.json` на реальные + фото
 - [ ] Указать номер WhatsApp в `SITE.whatsapp` (если нужен)
-- [ ] Заполнить реальный текст в `delivery.html` и `privacy.html`
-- [ ] Вставить реквизиты в подвале (`js/site.js`) вместо заглушки
+- [ ] Заполнить реальный текст в `delivery.html`
 - [ ] Логотип: текстовый уже стоит; при наличии картинки — заменить
