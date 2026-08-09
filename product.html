@@ -1345,6 +1345,9 @@ function buildProductHtml(p){
 
       <div class="product-brand">${p.brand}</div>
       <h1 class="product-name">${p.name}</h1>
+      ${(p.producer || p.quality) ? `<div class="product-origin" style="font-size:.8rem;color:var(--muted);margin:.3rem 0 1rem">
+        ${p.producer ? `Производитель: <span style="color:var(--cream)">${p.producer}</span>` : ''}${p.producer && p.quality ? ' &middot; ' : ''}${p.quality ? `Категория: <span style="color:var(--gold)">${p.quality}</span>` : ''}
+      </div>` : ''}
 
       <div class="product-rating">
         <div class="stars-lg">
