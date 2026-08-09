@@ -267,6 +267,7 @@ function renderFooter(){
     <div class="max-w-6xl mx-auto px-5 py-14 grid gap-10 md:grid-cols-3">
       <div>
         <div class="font-serif text-2xl mb-3"><span class="text-gold">9.19</span> PERFUME</div>
+        <p class="font-serif italic text-gold text-sm mb-2">Аромат, который запомнят</p>
         <p class="text-sm leading-relaxed" style="color:var(--muted)">Оригинальная и масляная парфюмерия. Прямые поставки из 6 стран Европы и ОАЭ. ${SITE.city}.</p>
       </div>
       <div class="text-sm flex flex-col gap-2" style="color:var(--muted)">
