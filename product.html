@@ -1234,7 +1234,14 @@ function metersHtml(p){
   </div>`;
 }
 
-let ALL = [], product = null, currentVariant = 0, qty = 1;
+let ALL = [], product = null, currentVariant = 0, qty = 1, qtyMin = 1, qtyStep = 1;
+
+function minQtyFor(v){
+  return v && v.volume && v.volume.includes('гр') ? 30 : 1;
+}
+function stepQtyFor(v){
+  return v && v.volume && v.volume.includes('гр') ? 10 : 1;
+}
 
 async function loadAll(){
   if (location.protocol === 'file:') return PRODUCTS_INLINE;
@@ -1371,9 +1378,9 @@ function buildProductHtml(p){
       <div class="qty-block">
         <span class="qty-label">Количество</span>
         <div class="qty-ctrl">
-          <button class="qty-btn" onclick="prodQty(-1)">−</button>
+          <button class="qty-btn" onclick="prodQty(-qtyStep)">−</button>
           <div class="qty-val" id="qty-display">1</div>
-          <button class="qty-btn" onclick="prodQty(1)">+</button>
+          <button class="qty-btn" onclick="prodQty(qtyStep)">+</button>
         </div>
       </div>
 
@@ -1524,8 +1531,11 @@ function renderNotFound(){
 
 /* ======================== Взаимодействие ======================== */
 function selectVariant(i){
-  currentVariant = i; qty = 1;
+  currentVariant = i;
   const v = product.variants[i];
+  qtyMin = minQtyFor(v);
+  qtyStep = stepQtyFor(v);
+  qty = qtyMin;
   const r = Math.floor(v.price), k = Math.round((v.price - r) * 100);
   document.getElementById('price-display').innerHTML =
     new Intl.NumberFormat('ru-RU').format(r) + `<sup>${String(k).padStart(2,'0')}</sup> ₽`;
@@ -1539,7 +1549,7 @@ function selectVariant(i){
 }
 
 function prodQty(delta){
-  qty = Math.max(1, qty + delta);
+  qty = Math.max(qtyMin, qty + delta);
   document.getElementById('qty-display').textContent = qty;
 }
 
