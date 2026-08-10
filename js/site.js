@@ -32,15 +32,34 @@ function removeFromCart(key){
   saveCart(getCart().filter(i => i.id + '|' + i.volume !== key));
   renderCart();
 }
-function changeQty(key, delta){
+function qtyRuleFor(item){
+  const bulk = item.volume && item.volume.includes('гр');
+  return bulk ? { step: 10, min: 30 } : { step: 1, min: 1 };
+}
+function changeQty(key, dir){
   const cart = getCart();
   const it = cart.find(i => i.id + '|' + i.volume === key);
   if (!it) return;
-  const next = it.qty + delta;
-  if (next < 1){ removeFromCart(key); return; }
+  const { step, min } = qtyRuleFor(it);
+  const next = it.qty + dir * step;
+  if (next < min){
+    if (min > 1){ it.qty = min; saveCart(cart); renderCart(); return; }
+    removeFromCart(key);
+    return;
+  }
   it.qty = next;
   saveCart(cart);
   renderCart();
+}
+function normalizeCartQty(){
+  const cart = getCart();
+  let changed = false;
+  cart.forEach(it => {
+    const { step, min } = qtyRuleFor(it);
+    const snapped = Math.max(min, Math.round(it.qty / step) * step);
+    if (snapped !== it.qty){ it.qty = snapped; changed = true; }
+  });
+  if (changed) saveCart(cart);
 }
 const cartTotal = () => getCart().reduce((s,i) => s + i.price * i.qty, 0);
 const cartCount = () => getCart().reduce((s,i) => s + i.qty, 0);
@@ -297,6 +316,7 @@ function renderFooter(){
 function renderCart(){
   const wrap = document.getElementById('cart-body');
   if (!wrap) return;
+  normalizeCartQty();
   const cart = getCart();
   if (!cart.length){
     wrap.innerHTML = `<p class="text-center py-16" style="color:var(--muted)">Корзина пуста</p>`;
