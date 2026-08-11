@@ -6,7 +6,7 @@ const SITE = {
   telegram: 'Pf_9_19',                 // без @
   whatsapp: '79216060303',             // напр. '79280000000' (пусто = кнопка скрыта)
   city: 'Махачкала',
-  baseUrl: 'https://guslugy-collab.github.io/9_19-', // для og-тегов и sitemap
+  baseUrl: 'https://pf-9-19.ru', // для og-тегов и sitemap
 };
 
 const money = n => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://guslugy-collab.github.io/9_19-/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://guslugy-collab.github.io/9_19-/catalog.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://guslugy-collab.github.io/9_19-/opt.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://guslugy-collab.github.io/9_19-/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://guslugy-collab.github.io/9_19-/delivery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://guslugy-collab.github.io/9_19-/contacts.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://pf-9-19.ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://pf-9-19.ru/catalog.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pf-9-19.ru/opt.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://pf-9-19.ru/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://pf-9-19.ru/delivery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://pf-9-19.ru/contacts.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

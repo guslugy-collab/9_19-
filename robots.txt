@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guslugy-collab.github.io/9_19-/sitemap.xml
+Sitemap: https://pf-9-19.ru/sitemap.xml
