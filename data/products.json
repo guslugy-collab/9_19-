@@ -51,8 +51,8 @@
         "id":  "avtorskie-i-td-nebesnyy-feromon",
         "name":  "НЕБЕСНЫЙ ФЕРОМОН",
         "brand":  "АВТОРСКИЕ И ТД",
-        "producer":  "IFF",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "мускус, цитрус",
@@ -1055,7 +1055,7 @@
         "name":  "AZORA",
         "brand":  "ATTAR COLLECTION",
         "producer":  "France",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "специи, шафран",
@@ -1292,8 +1292,8 @@
         "id":  "ajmal-ajmal-amber-wood",
         "name":  "AJMAL AMBER WOOD",
         "brand":  "AJMAL",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Luzi AG",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "специи, шафран",
@@ -1316,8 +1316,8 @@
         "id":  "ajmal-ajmal-amber-wood-2",
         "name":  "AJMAL AMBER WOOD",
         "brand":  "AJMAL",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Luzi AG",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "специи, шафран",
@@ -1916,7 +1916,7 @@
         "id":  "anna-sui-lucky-wish",
         "name":  "LUCKY WISH",
         "brand":  "ANNA SUI",
-        "producer":  "Luzi AG",
+        "producer":  "Spain",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "персик, груша",
@@ -1933,13 +1933,14 @@
                              "volume":  "1 гр",
                              "price_wholesale":  18
                          }
-                     ]
+                     ],
+        "quality":  "TOP"
     },
     {
         "id":  "anna-sui-lucky-wish-2",
         "name":  "LUCKY WISH",
         "brand":  "ANNA SUI",
-        "producer":  "Luzi AG",
+        "producer":  "Seluz",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "персик, груша",
@@ -1956,7 +1957,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "quality":  "TOP"
     },
     {
         "id":  "anna-sui-lucky-wish-3",
@@ -1985,8 +1987,8 @@
         "id":  "antonio-banderas-blue-seduction",
         "name":  "BLUE SEDUCTION",
         "brand":  "ANTONIO BANDERAS",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Spain",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "морская нота, мята, дыня",
@@ -2033,7 +2035,7 @@
         "id":  "antonio-banderas-blue-seduction-3",
         "name":  "BLUE SEDUCTION",
         "brand":  "ANTONIO BANDERAS",
-        "producer":  "France",
+        "producer":  "Turkey",
         "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "male",
@@ -2177,7 +2179,7 @@
         "id":  "armani-acqua-di-gio-homme",
         "name":  "ACQUA DI GIO HOMME",
         "brand":  "ARMANI",
-        "producer":  "France",
+        "producer":  "Turkey",
         "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "male",
@@ -2657,8 +2659,8 @@
         "id":  "byredo-bal-d-afrique",
         "name":  "BAL D\u0027AFRIQUE",
         "brand":  "BYREDO",
-        "producer":  "Givaudan",
-        "quality":  "PREMIUM",
+        "producer":  "Luzi AG",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "бергамот, лимон, нероли, африканская календула",
@@ -2969,8 +2971,8 @@
         "id":  "bvlgari-aqua-pour-homme-marine",
         "name":  "AQUA POUR HOMME MARINE",
         "brand":  "BVLGARI",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Luzi AG",
+        "quality":  "ST",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "морская нота, мандарин",
@@ -3041,7 +3043,7 @@
         "id":  "bvlgari-aqva-pour-homme-atlantiqve",
         "name":  "AQVA POUR HOMME ATLANTIQVE",
         "brand":  "BVLGARI",
-        "producer":  "England",
+        "producer":  "Turkey",
         "quality":  "PREMIUM",
         "type":  "oil",
         "gender":  "male",
@@ -3055,9 +3057,9 @@
         "image_url":  "images/products/frag-42856.jpg",
         "variants":  [
                          {
-                             "price":  20,
+                             "price":  45,
                              "volume":  "1 гр",
-                             "price_wholesale":  20
+                             "price_wholesale":  45
                          }
                      ]
     },
@@ -3075,7 +3077,7 @@
         "notes":  "Верх: грейпфрут, морская нота. Сердце: водоросли, мандарин. База: амбра, дерево.",
         "description":  "Свежий морской мужской аромат. Солёный, чистый и универсальный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-42856.jpg",
         "variants":  [
                          {
@@ -3138,7 +3140,7 @@
         "name":  "TYGAR",
         "brand":  "BVLGARI",
         "producer":  "Turkey",
-        "quality":  "LUX",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "специи, цитрус",
@@ -3439,9 +3441,9 @@
         "image_url":  "images/products/frag-58545.jpg",
         "variants":  [
                          {
-                             "price":  40,
+                             "price":  45,
                              "volume":  "1 гр",
-                             "price_wholesale":  40
+                             "price_wholesale":  45
                          }
                      ]
     },
@@ -3459,7 +3461,7 @@
         "notes":  "Верх: фрукты, бергамот. Сердце: жасмин, роза. База: мускус, амбра, дерево.",
         "description":  "Элегантный фруктово-цветочный аромат. Мягкий, тёплый и стойкий.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-58545.jpg",
         "variants":  [
                          {
@@ -4025,8 +4027,7 @@
         "id":  "carolina-herrera-good-girl",
         "name":  "GOOD GIRL",
         "brand":  "CAROLINA HERRERA",
-        "producer":  "Luzi AG",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "миндаль, кофе",
@@ -4121,8 +4122,8 @@
         "id":  "carolina-herrera-212-vip-for-men",
         "name":  "212 VIP FOR MEN",
         "brand":  "CAROLINA HERRERA",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Turkey",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "грейпфрут, лайм, перец",
@@ -4483,7 +4484,7 @@
         "notes":  "Верх: лаванда, бергамот, лимон. Сердце: герань, кедр. База: сандал, мускус, дубовый мох.",
         "description":  "Классический фужерно-древесный мужской аромат. Свежий и элегантный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-329.jpg",
         "variants":  [
                          {
@@ -4511,9 +4512,9 @@
         "image_url":  "images/products/frag-327.jpg",
         "variants":  [
                          {
-                             "price":  22,
+                             "price":  25,
                              "volume":  "1 гр",
-                             "price_wholesale":  22
+                             "price_wholesale":  25
                          }
                      ]
     },
@@ -4521,8 +4522,8 @@
         "id":  "chloe-chloe",
         "name":  "CHLOE",
         "brand":  "CHLOE",
-        "producer":  "Turkey",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "пион, личи, фрезия",
@@ -4760,8 +4761,8 @@
         "id":  "chanel-bleu-de-chanel",
         "name":  "BLEU DE CHANEL",
         "brand":  "CHANEL",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Spain",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "грейпфрут, лимон, мята, розовый перец",
@@ -4968,14 +4969,16 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "chanel-chanel-5",
         "name":  "CHANEL 5",
         "brand":  "CHANEL",
         "producer":  "Givaudan",
-        "quality":  "PREMIUM",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "альдегиды, иланг-иланг, нероли, бергамот",
@@ -4988,9 +4991,9 @@
         "image_url":  "images/products/frag-28711.jpg",
         "variants":  [
                          {
-                             "price":  15,
+                             "price":  20,
                              "volume":  "1 гр",
-                             "price_wholesale":  15
+                             "price_wholesale":  20
                          }
                      ]
     },
@@ -5008,7 +5011,7 @@
         "notes":  "Верх: альдегиды, иланг-иланг, нероли, бергамот. Сердце: роза, жасмин, ирис, ландыш. База: сандал, ваниль, ветивер, мускус.",
         "description":  "Легендарный альдегидно-цветочный аромат №5. Абстрактная, вневременная классика элегантности.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-28711.jpg",
         "variants":  [
                          {
@@ -5071,7 +5074,7 @@
         "name":  "COCO MADEMOISELLE",
         "brand":  "CHANEL",
         "producer":  "Givaudan",
-        "quality":  "Premium",
+        "quality":  "PREMIUM",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "апельсин, бергамот, мандарин",
@@ -5084,9 +5087,9 @@
         "image_url":  "images/products/frag-611.jpg",
         "variants":  [
                          {
-                             "price":  25,
+                             "price":  20,
                              "volume":  "1 гр",
-                             "price_wholesale":  25
+                             "price_wholesale":  20
                          }
                      ]
     },
@@ -5094,8 +5097,8 @@
         "id":  "chopard-vetiver-d-haiti-au-the-vert",
         "name":  "VETIVER D\u0027HAITI AU THE VERT",
         "brand":  "CHOPARD",
-        "producer":  "EPS",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "зелёный чай, бергамот",
@@ -5190,7 +5193,7 @@
         "id":  "clive-christian-matsukita",
         "name":  "MATSUKITA",
         "brand":  "CLIVE CHRISTIAN",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "ананас, специи, слива",
@@ -5207,7 +5210,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Turkey"
     },
     {
         "id":  "clive-christian-matsukita-2",
@@ -5308,7 +5312,7 @@
         "id":  "clive-christian-blonde-amber",
         "name":  "BLONDE AMBER",
         "brand":  "CLIVE CHRISTIAN",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "мандарин, специи",
@@ -5325,7 +5329,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Turkey"
     },
     {
         "id":  "clive-christian-blonde-amber-2",
@@ -5424,8 +5429,8 @@
         "id":  "creed-aventus",
         "name":  "AVENTUS",
         "brand":  "CREED",
-        "producer":  "CPL",
-        "quality":  "TOP",
+        "producer":  "Givaudan",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "ананас, бергамот, яблоко, чёрная смородина",
@@ -5448,8 +5453,7 @@
         "id":  "creed-aventus-2",
         "name":  "AVENTUS",
         "brand":  "CREED",
-        "producer":  "CPL",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "ананас, бергамот, яблоко, чёрная смородина",
@@ -5472,7 +5476,7 @@
         "id":  "creed-aventus-3",
         "name":  "AVENTUS",
         "brand":  "CREED",
-        "producer":  "CPL",
+        "producer":  "Luzi AG",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
@@ -5953,7 +5957,7 @@
         "name":  "FARENHEIT",
         "brand":  "DIOR",
         "producer":  "France",
-        "quality":  "LUX",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "мандарин, боярышник, лаванда",
@@ -6096,8 +6100,8 @@
         "id":  "dior-sauvage",
         "name":  "SAUVAGE",
         "brand":  "DIOR",
-        "producer":  "Turkey",
-        "quality":  "DE LUX",
+        "producer":  "France",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "калабрийский бергамот, перец",
@@ -6144,8 +6148,8 @@
         "id":  "dior-sauvage-3",
         "name":  "SAUVAGE",
         "brand":  "DIOR",
-        "producer":  "Turkey",
-        "quality":  "DE LUX",
+        "producer":  "EPS",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "калабрийский бергамот, перец",
@@ -6158,9 +6162,9 @@
         "image_url":  "images/products/frag-31861.jpg",
         "variants":  [
                          {
-                             "price":  40,
+                             "price":  22,
                              "volume":  "1 гр",
-                             "price_wholesale":  40
+                             "price_wholesale":  22
                          }
                      ]
     },
@@ -6400,7 +6404,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  22
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-light-blue-women",
@@ -6422,7 +6428,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "Spain",
+        "quality":  "TOP"
     },
     {
         "id":  "dolce-gabbana-the-one-men",
@@ -6444,7 +6452,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-the-one-women",
@@ -6466,7 +6476,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-the-only-one",
@@ -6488,7 +6500,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  22
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-l-imperatrice-3",
@@ -6510,7 +6524,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-l-imperatrice-3-2",
@@ -6532,7 +6548,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "Spain",
+        "quality":  "TOP"
     },
     {
         "id":  "dolce-gabbana-velvet-desert-oud",
@@ -6554,7 +6572,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "dolce-gabbana-k-by-king",
@@ -6576,7 +6596,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-light-blue-forever",
@@ -6598,7 +6620,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "dolce-gabbana-q-by-queen",
@@ -6620,7 +6644,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "England",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "dolce-gabbana-the-one-sport",
@@ -6642,7 +6668,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "diesel-bad",
@@ -6865,7 +6893,7 @@
         "name":  "CHERRY IN THE AIR",
         "brand":  "ESCADA",
         "producer":  "Turkey",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "вишня, лимон",
@@ -6937,7 +6965,7 @@
         "name":  "SEXY GRAFFITI",
         "brand":  "ESCADA",
         "producer":  "Turkey",
-        "quality":  "Top",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "личи, персик",
@@ -7008,7 +7036,7 @@
         "id":  "ex-nihilo-narcotique-fleur",
         "name":  "NARCOTIQUE FLEUR",
         "brand":  "EX NIHILO",
-        "producer":  "Luzi AG",
+        "producer":  "Spain",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -7032,7 +7060,7 @@
         "id":  "ex-nihilo-narcotique-fleur-2",
         "name":  "NARCOTIQUE FLEUR",
         "brand":  "EX NIHILO",
-        "producer":  "Luzi AG",
+        "producer":  "Robertet",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -7234,7 +7262,7 @@
         "notes":  "Верх: личи, бергамот. Сердце: жасмин, кокос. База: мускус, дерево, ваниль.",
         "description":  "Свежий фруктово-цветочный аромат. Солнечный, лёгкий и притягательный унисекс.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-84224.jpg",
         "variants":  [
                          {
@@ -7248,8 +7276,7 @@
         "id":  "ex-nihilo-blue-talisman-2",
         "name":  "BLUE TALISMAN",
         "brand":  "EX NIHILO",
-        "producer":  "Luzi AG",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "личи, бергамот",
@@ -7258,7 +7285,7 @@
         "notes":  "Верх: личи, бергамот. Сердце: жасмин, кокос. База: мускус, дерево, ваниль.",
         "description":  "Свежий фруктово-цветочный аромат. Солнечный, лёгкий и притягательный унисекс.",
         "badge":  null,
-        "in_stock":  false,
+        "in_stock":  true,
         "image_url":  "images/products/frag-84224.jpg",
         "variants":  [
                          {
@@ -7368,7 +7395,7 @@
         "id":  "escentric-molecule-escentric-02",
         "name":  "ESCENTRIC 02",
         "brand":  "ESCENTRIC MOLECULE",
-        "quality":  "PREMIUM",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "перец, свежесть",
@@ -7385,13 +7412,14 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "Esmega"
     },
     {
         "id":  "escentric-molecule-escentric-02-2",
         "name":  "ESCENTRIC 02",
         "brand":  "ESCENTRIC MOLECULE",
-        "quality":  "PREMIUM",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "перец, свежесть",
@@ -7408,7 +7436,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Turkey"
     },
     {
         "id":  "escentric-molecule-escentric-02-black",
@@ -7532,8 +7561,8 @@
         "id":  "escentric-molecule-escentric-molecule-05",
         "name":  "ESCENTRIC MOLECULE 05",
         "brand":  "ESCENTRIC MOLECULE",
-        "producer":  "England",
-        "quality":  "PREMIUM",
+        "producer":  "Luzi AG",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "",
@@ -7620,7 +7649,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "escentric-molecule-intelligence-and-fantasy-volume-1-igry-razuma-1-2",
@@ -7642,7 +7673,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  45
                          }
-                     ]
+                     ],
+        "producer":  "England",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "escentric-molecule-precision-and-grace-volume-2-igry-razuma-2",
@@ -7664,7 +7697,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  60
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "escentric-molecule-molecules-01-mandarin",
@@ -7813,7 +7848,7 @@
         "id":  "essential-parfums-bois-imperial",
         "name":  "BOIS IMPERIAL",
         "brand":  "ESSENTIAL PARFUMS",
-        "producer":  "France",
+        "producer":  "Turkey",
         "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
@@ -7973,7 +8008,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "EPS",
+        "quality":  "TOP"
     },
     {
         "id":  "gissah-calabria",
@@ -8507,7 +8544,7 @@
         "id":  "genyum-painter-hudozhnik",
         "name":  "PAINTER (Художник)",
         "brand":  "GENYUM",
-        "producer":  "Eps",
+        "producer":  "IFF",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -8531,7 +8568,7 @@
         "id":  "genyum-painter-hudozhnik-2",
         "name":  "PAINTER (Художник)",
         "brand":  "GENYUM",
-        "producer":  "Eps",
+        "producer":  "EPS",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -8556,7 +8593,7 @@
         "name":  "OUD ESSENTIEL",
         "brand":  "GUERLAIN",
         "producer":  "Luzi AG",
-        "quality":  "LUX",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "шафран, бергамот",
@@ -8613,7 +8650,7 @@
         "notes":  "Верх: мимоза, чёрная смородина. Сердце: роза, буддлея. База: миндаль, ваниль, дерево.",
         "description":  "Нежный пудрово-цветочный аромат. Мимоза и роза — женственный и элегантный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-66.jpg",
         "variants":  [
                          {
@@ -8723,7 +8760,7 @@
         "id":  "guerlain-mon-guerlain",
         "name":  "MON GUERLAIN",
         "brand":  "GUERLAIN",
-        "producer":  "Eps",
+        "producer":  "EPS",
         "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "female",
@@ -8757,7 +8794,7 @@
         "notes":  "Верх: вишня, миндаль. Сердце: вишнёвый цвет, гелиотроп. База: ваниль, тонка, мускус.",
         "description":  "Сладкий вишнёво-миндальный гурман. Тёплый, ликёрный и притягательный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-52792.jpg",
         "variants":  [
                          {
@@ -8771,8 +8808,7 @@
         "id":  "haute-fragrance-company-hfc-d-intrigue-2",
         "name":  "D.INTRIGUE",
         "brand":  "HAUTE FRAGRANCE COMPANY (HFC)",
-        "producer":  "IFF",
-        "quality":  "TOP",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "вишня, миндаль",
@@ -8781,7 +8817,7 @@
         "notes":  "Верх: вишня, миндаль. Сердце: вишнёвый цвет, гелиотроп. База: ваниль, тонка, мускус.",
         "description":  "Сладкий вишнёво-миндальный гурман. Тёплый, ликёрный и притягательный.",
         "badge":  null,
-        "in_stock":  false,
+        "in_stock":  true,
         "image_url":  "images/products/frag-52792.jpg",
         "variants":  [
                          {
@@ -9276,7 +9312,7 @@
         "name":  "OUD FOR GREATNESS",
         "brand":  "INITIO PARFUMS PRIVES",
         "producer":  "France",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "шафран, мускатный орех",
@@ -9332,7 +9368,7 @@
         "notes":  "Верх: бензоин. Сердце: апельсиновый цвет, роза. База: ваниль, мускус, амбра.",
         "description":  "Тёплый ванильно-цветочный гурман. Обволакивающий, чувственный и стойкий.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-50351.jpg",
         "variants":  [
                          {
@@ -9970,8 +10006,8 @@
         "id":  "juliette-has-a-gun-not-a-perfume-superdose",
         "name":  "NOT A PERFUME SUPERDOSE",
         "brand":  "JULIETTE HAS A GUN",
-        "producer":  "Luzi AG",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "",
@@ -10004,7 +10040,7 @@
         "notes":  "Сердце: cetalox (амброксан). База: амбра, мускус.",
         "description":  "Усиленная версия Not A Perfume. Более плотный амброво-древесный шлейф.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-56679.jpg",
         "variants":  [
                          {
@@ -10058,7 +10094,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "kajal-dahab",
@@ -10112,8 +10150,8 @@
         "id":  "kajal-almaz",
         "name":  "ALMAZ",
         "brand":  "KAJAL",
-        "producer":  "Turkey",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "бергамот, шафран",
@@ -10233,7 +10271,7 @@
         "name":  "L\u0027EAU PAR KENZO",
         "brand":  "KENZO",
         "producer":  "Turkey",
-        "quality":  "DE LUX",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "мята, водные ноты",
@@ -10352,7 +10390,7 @@
         "id":  "kilian-good-girl-gone-bad",
         "name":  "GOOD GIRL GONE BAD",
         "brand":  "KILIAN",
-        "producer":  "England",
+        "producer":  "Givaudan",
         "quality":  "PREMIUM",
         "type":  "oil",
         "gender":  "female",
@@ -10728,7 +10766,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  45
                          }
-                     ]
+                     ],
+        "producer":  "Givaudan",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "kilian-ang-share-by-kilian-2",
@@ -10750,7 +10790,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "kilian-apple-brandy-on-the-rocks",
@@ -10868,7 +10910,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "laboratorio-olfattivo-need-u",
@@ -10958,11 +11002,13 @@
         "image_url":  "images/products/frag-11043.jpg",
         "variants":  [
                          {
-                             "price":  17,
+                             "price":  12,
                              "volume":  "1 гр",
-                             "price_wholesale":  17
+                             "price_wholesale":  12
                          }
-                     ]
+                     ],
+        "producer":  "Spain",
+        "quality":  "TOP"
     },
     {
         "id":  "lacoste-l-12-12-white-2",
@@ -10984,7 +11030,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "lacoste-essential",
@@ -11438,7 +11486,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  22
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "lancome-tresor-la-nuit",
@@ -11517,7 +11567,7 @@
         "name":  "ECLAT D\u0027ARPEGE",
         "brand":  "LANVIN",
         "producer":  "France",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "зелёная сирень, лист",
@@ -11572,7 +11622,7 @@
         "notes":  "Верх: бергамот, лаванда. Сердце: кардамон, шалфей. База: кедр, мускус.",
         "description":  "Свежий ароматический мужской аромат. Чистый, элегантный и универсальный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-6094.jpg",
         "variants":  [
                          {
@@ -12136,7 +12186,7 @@
         "id":  "louis-vuitton-l-immensite",
         "name":  "L\u0027IMMENSITE",
         "brand":  "LOUIS VUITTON",
-        "producer":  "IFF",
+        "producer":  "Luzi AG",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
@@ -12150,9 +12200,9 @@
         "image_url":  "images/products/frag-49751.jpg",
         "variants":  [
                          {
-                             "price":  40,
+                             "price":  45,
                              "volume":  "1 гр",
-                             "price_wholesale":  40
+                             "price_wholesale":  45
                          }
                      ]
     },
@@ -12170,7 +12220,7 @@
         "notes":  "Верх: грейпфрут, имбирь. Сердце: розмарин, герань. База: амброксан, дерево.",
         "description":  "Свежий пряно-древесный мужской аромат. Цитрусово-имбирный верх и чистый амбровый шлейф.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-49751.jpg",
         "variants":  [
                          {
@@ -12184,7 +12234,6 @@
         "id":  "louis-vuitton-l-immensite-3",
         "name":  "L\u0027IMMENSITE",
         "brand":  "LOUIS VUITTON",
-        "producer":  "IFF",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
@@ -12244,11 +12293,13 @@
         "image_url":  "images/products/frag-53947.jpg",
         "variants":  [
                          {
-                             "price":  50,
+                             "price":  40,
                              "volume":  "1 гр",
-                             "price_wholesale":  50
+                             "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "louis-vuitton-meteore",
@@ -12364,9 +12415,9 @@
         "image_url":  "images/products/frag-67370.jpg",
         "variants":  [
                          {
-                             "price":  65,
+                             "price":  90,
                              "volume":  "1 гр",
-                             "price_wholesale":  65
+                             "price_wholesale":  90
                          }
                      ]
     },
@@ -12480,7 +12531,7 @@
         "notes":  "Верх: бергамот, лимон. Сердце: жасмин, апельсиновый цвет. База: мускус, амбра.",
         "description":  "Элегантный цветочно-цитрусовый аромат. Светлый, чистый и роскошный унисекс.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-68357.jpg",
         "variants":  [
                          {
@@ -12495,7 +12546,7 @@
         "name":  "SYMPHONY",
         "brand":  "LOUIS VUITTON",
         "producer":  "Turkey",
-        "quality":  "Top",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "бергамот, лимон",
@@ -12556,9 +12607,9 @@
         "image_url":  "images/products/frag-122775.jpg",
         "variants":  [
                          {
-                             "price":  55,
+                             "price":  50,
                              "volume":  "1 гр",
-                             "price_wholesale":  55
+                             "price_wholesale":  50
                          }
                      ]
     },
@@ -12628,7 +12679,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-francis-kurkdjian-baccarat-rouge-540",
@@ -12650,7 +12703,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "maison-francis-kurkdjian-baccarat-rouge-540-2",
@@ -12672,7 +12727,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-francis-kurkdjian-baccarat-rouge-540-3",
@@ -12694,7 +12751,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "Givaudan",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "maison-francis-kurkdjian-amyris-homme-extrait-de-parfum",
@@ -12716,7 +12775,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "maison-francis-kurkdjian-gentle-fluidity-gold",
@@ -12738,7 +12799,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-francis-kurkdjian-grand-soir",
@@ -12760,7 +12823,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-francis-kurkdjian-aqua-universalis",
@@ -12782,7 +12847,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-francis-kurkdjian-oud-satin-mood",
@@ -12804,7 +12871,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Givaudan",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "maison-francis-kurkdjian-gentle-fluidity",
@@ -12826,7 +12895,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Givaudan",
+        "quality":  "PREMIUM"
     },
     {
         "id":  "maison-francis-kurkdjian-aqua-celestia",
@@ -12848,7 +12919,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "maison-martin-margiela-under-the-lemon-tree",
@@ -12918,7 +12991,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "marc-antoine-barrois-ganymede-2",
@@ -12940,7 +13015,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Robertet",
+        "quality":  "LUX"
     },
     {
         "id":  "marc-antoine-barrois-ganymede-3",
@@ -12962,7 +13039,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "IFF",
+        "quality":  "TOP"
     },
     {
         "id":  "marc-antoine-barrois-encelade",
@@ -12984,7 +13063,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  50
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "marc-antoine-barrois-b-683",
@@ -13006,7 +13087,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  45
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "TOP"
     },
     {
         "id":  "marc-antoine-barrois-ganymede-extrait",
@@ -13028,7 +13111,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  55
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "marc-antoine-barrois-tilia-usil-versiya",
@@ -13050,7 +13135,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  60
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "marc-antoine-barrois-tilia",
@@ -13064,7 +13151,7 @@
         "notes":  "Верх: липа, зелёные ноты. Сердце: мёд, флёрдоранж. База: мускус, дерево.",
         "description":  "Свежий медово-цветочный аромат липового цвета. Нежный, солнечный и элегантный унисекс.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-91688.jpg",
         "variants":  [
                          {
@@ -13072,7 +13159,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "TOP"
     },
     {
         "id":  "marc-antoine-barrois-aldebaran",
@@ -13094,7 +13183,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  45
                          }
-                     ]
+                     ],
+        "quality":  "TOP"
     },
     {
         "id":  "matiere-premiere-parisian-musc",
@@ -13234,9 +13324,9 @@
         "image_url":  "images/products/frag-15211.jpg",
         "variants":  [
                          {
-                             "price":  40,
+                             "price":  50,
                              "volume":  "1 гр",
-                             "price_wholesale":  40
+                             "price_wholesale":  50
                          }
                      ]
     },
@@ -13483,8 +13573,8 @@
         "id":  "memo-marfa",
         "name":  "MARFA",
         "brand":  "MEMO",
-        "producer":  "Givaudan",
-        "quality":  "PREMIUM",
+        "producer":  "Luzi AG",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "альдегиды, фиалка",
@@ -14011,7 +14101,7 @@
         "id":  "nasomatto-black-afgano",
         "name":  "BLACK AFGANO",
         "brand":  "NASOMATTO",
-        "quality":  "TOP",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "смолы, зелёные ноты",
@@ -14028,7 +14118,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  40
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG"
     },
     {
         "id":  "nasomatto-black-afgano-2",
@@ -14043,7 +14134,7 @@
         "notes":  "Верх: смолы, зелёные ноты. Сердце: уд, кофе, табак. База: смолы, дерево, мох.",
         "description":  "Тёмный смолисто-удовый аромат-легенда. Насыщенный, наркотический и мощный.",
         "badge":  null,
-        "in_stock":  false,
+        "in_stock":  true,
         "image_url":  "images/products/frag-6472.jpg",
         "variants":  [
                          {
@@ -14066,7 +14157,7 @@
         "notes":  "Верх: смолы, зелёные ноты. Сердце: уд, кофе, табак. База: смолы, дерево, мох.",
         "description":  "Тёмный смолисто-удовый аромат-легенда. Насыщенный, наркотический и мощный.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-6472.jpg",
         "variants":  [
                          {
@@ -14074,7 +14165,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  60
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG"
     },
     {
         "id":  "nasomatto-nudiflorum",
@@ -14318,7 +14410,7 @@
         "id":  "ormonde-jayne-montabaco",
         "name":  "MONTABACO",
         "brand":  "ORMONDE JAYNE",
-        "producer":  "IFF",
+        "producer":  "Spain",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -14390,8 +14482,8 @@
         "id":  "ormonde-jayne-montabaco-verano",
         "name":  "MONTABACO VERANO",
         "brand":  "ORMONDE JAYNE",
-        "producer":  "IFF",
-        "quality":  "TOP",
+        "producer":  "EPS",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "цитрус, бергамот",
@@ -14486,8 +14578,8 @@
         "id":  "orto-parisi-megamare",
         "name":  "MEGAMARE",
         "brand":  "ORTO PARISI",
-        "producer":  "Spain",
-        "quality":  "TOP",
+        "producer":  "Seluz",
+        "quality":  "1-qual",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "морская нота, цитрус",
@@ -14702,8 +14794,8 @@
         "id":  "paco-rabanne-invictus",
         "name":  "INVICTUS",
         "brand":  "PACO RABANNE",
-        "producer":  "Turkey",
-        "quality":  "DE LUX",
+        "producer":  "Spain",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "грейпфрут, морская нота, мандарин",
@@ -14750,8 +14842,8 @@
         "id":  "paco-rabanne-invictus-aqua",
         "name":  "INVICTUS AQUA",
         "brand":  "PACO RABANNE",
-        "producer":  "Turkey",
-        "quality":  "TOP",
+        "producer":  "France",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "грейпфрут, морская нота",
@@ -14943,7 +15035,7 @@
         "name":  "LADY MILLION",
         "brand":  "PACO RABANNE",
         "producer":  "France",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "female",
         "notes_top":  "нероли, малина, лимон",
@@ -15533,7 +15625,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  35
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "plume-impression-art-nouveau",
@@ -16296,7 +16390,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "shiseido-zen",
@@ -16318,7 +16414,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Firmenich",
+        "quality":  "TOP"
     },
     {
         "id":  "shl-777-soleil-de-jeddah",
@@ -16430,7 +16528,7 @@
         "notes":  "Верх: мандарин, ирис. Сердце: ирис, пачули. База: мускус, амбра, дерево.",
         "description":  "Элегантный ирисово-древесный женский аромат. Пудровый и утончённый.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-3136.jpg",
         "variants":  [
                          {
@@ -16493,7 +16591,7 @@
         "name":  "KIRKE",
         "brand":  "TIZIANI TERENZI",
         "producer":  "France",
-        "quality":  "DE LUX",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "маракуйя, чёрная смородина, персик",
@@ -16516,8 +16614,8 @@
         "id":  "tiziani-terenzi-kirke-3",
         "name":  "KIRKE",
         "brand":  "TIZIANI TERENZI",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Seluz",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "маракуйя, чёрная смородина, персик",
@@ -16732,7 +16830,7 @@
         "id":  "tiziani-terenzi-delox",
         "name":  "DELOX",
         "brand":  "TIZIANI TERENZI",
-        "producer":  "Eps",
+        "producer":  "EPS",
         "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
@@ -16827,8 +16925,8 @@
         "id":  "tom-ford-oud-wood",
         "name":  "OUD WOOD",
         "brand":  "TOM FORD",
-        "producer":  "Givaudan",
-        "quality":  "PREMIUM",
+        "producer":  "Luzi AG",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "male",
         "notes_top":  "уд, розовое дерево, кардамон",
@@ -17547,8 +17645,8 @@
         "id":  "thomas-kosmala-no-4-apres-l-amour",
         "name":  "No 4 APRES L\u0027AMOUR",
         "brand":  "THOMAS KOSMALA",
-        "producer":  "Robertet",
-        "quality":  "TOP",
+        "producer":  "Luzi AG",
+        "quality":  "LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "бергамот, шафран",
@@ -17571,7 +17669,7 @@
         "id":  "thomas-kosmala-no-4-apres-l-amour-2",
         "name":  "No 4 APRES L\u0027AMOUR",
         "brand":  "THOMAS KOSMALA",
-        "producer":  "Robertet",
+        "producer":  "IFF",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -17643,7 +17741,7 @@
         "id":  "trussardi-trussardi-donna",
         "name":  "TRUSSARDI DONNA",
         "brand":  "TRUSSARDI",
-        "producer":  "IFF",
+        "producer":  "Turkey",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "female",
@@ -17965,7 +18063,7 @@
         "notes":  "Верх: мята, зелёное яблоко, лимон. Сердце: тонка, амброксан, герань. База: ваниль, кедр, дубовый мох, ветивер.",
         "description":  "Свежий сладко-древесный мужской аромат. Мятно-яблочный верх и тёплая ванильно-древесная база.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-16657.jpg",
         "variants":  [
                          {
@@ -18147,8 +18245,8 @@
         "id":  "vertus-narcos-is",
         "name":  "NARCOS\u0027IS",
         "brand":  "VERTUS",
-        "producer":  "England",
-        "quality":  "PREMIUM",
+        "producer":  "Turkey",
+        "quality":  "DE LUX",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "апельсин, жасмин",
@@ -18651,8 +18749,8 @@
         "id":  "xerjoff-sospiro-accento",
         "name":  "ACCENTO",
         "brand":  "XERJOFF SOSPIRO",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Spain",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "ананас, бергамот, зелёные ноты",
@@ -18675,8 +18773,8 @@
         "id":  "xerjoff-sospiro-accento-2",
         "name":  "ACCENTO",
         "brand":  "XERJOFF SOSPIRO",
-        "producer":  "France",
-        "quality":  "DE LUX",
+        "producer":  "Luzi AG",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "ананас, бергамот, зелёные ноты",
@@ -18747,7 +18845,7 @@
         "id":  "xerjoff-sospiro-erba-pura",
         "name":  "ERBA PURA",
         "brand":  "XERJOFF SOSPIRO",
-        "producer":  "CPL",
+        "producer":  "Spain",
         "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
@@ -18853,7 +18951,7 @@
         "notes":  "Верх: розовый перец, лаванда. Сердце: ирис, фиалка. База: ваниль, амбра, мускус.",
         "description":  "Мягкий пудрово-ванильный аромат с ирисом. Тёплый, нежный и обволакивающий.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-16450.jpg",
         "variants":  [
                          {
@@ -18907,7 +19005,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  55
                          }
-                     ]
+                     ],
+        "producer":  "EPS",
+        "quality":  "DE LUX"
     },
     {
         "id":  "xerjoff-sospiro-xj-1861-naxos-xerjoff",
@@ -19152,8 +19252,8 @@
         "id":  "zarkoperfume-pink-molecule-090-09",
         "name":  "PINK MOLECULE 090 09",
         "brand":  "ZARKOPERFUME",
-        "producer":  "Givaudan",
-        "quality":  "PREMIUM",
+        "producer":  "Turkey",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "фиалка, специи",
@@ -19337,7 +19437,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Spain"
     },
     {
         "id":  "zielinski-rozen-black-pepper-2",
@@ -19366,8 +19467,8 @@
         "id":  "zielinski-rozen-fiction",
         "name":  "FICTION",
         "brand":  "ZIELINSKI \u0026 ROZEN",
-        "producer":  "England",
-        "quality":  "PREMIUM",
+        "producer":  "Luzi AG",
+        "quality":  "TOP",
         "type":  "oil",
         "gender":  "unisex",
         "notes_top":  "бергамот, специи",
@@ -19454,7 +19555,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "zielinski-rozen-vanilla-blend",
@@ -19566,7 +19669,7 @@
         "notes":  "Верх: специи. Сердце: табак, ветивер. База: амбра, мускус.",
         "description":  "Тёплый табачно-древесный аромат. Насыщенный, дымный и представительный унисекс.",
         "badge":  null,
-        "in_stock":  true,
+        "in_stock":  false,
         "image_url":  "images/products/frag-65063.jpg",
         "variants":  [
                          {
@@ -19668,7 +19771,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "arabskie-raznoe-zam-zam",
@@ -19690,7 +19795,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "arabskie-raznoe-jannet-el-firdaus",
@@ -19712,7 +19819,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "arabskie-raznoe-jannet-firdaus-white",
@@ -19734,7 +19843,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "France",
+        "quality":  "DE LUX"
     },
     {
         "id":  "arabskie-raznoe-golden-dust-khalis",
@@ -19756,7 +19867,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  20
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG"
     },
     {
         "id":  "arabskie-raznoe-mukhallat-asgharali",
@@ -19778,7 +19890,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "arabskie-raznoe-chernyy-kamen",
@@ -19800,7 +19914,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  25
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "arabskie-raznoe-shahrazad-zahra-perfumes",
@@ -19822,7 +19938,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  15
                          }
-                     ]
+                     ],
+        "producer":  "Luzi AG",
+        "quality":  "LUX"
     },
     {
         "id":  "arabskie-raznoe-musk-tahara-pomegranate",
@@ -19844,7 +19962,9 @@
                              "volume":  "1 гр",
                              "price_wholesale":  30
                          }
-                     ]
+                     ],
+        "producer":  "Turkey",
+        "quality":  "DE LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-lavanda",
@@ -19866,7 +19986,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-roza",
@@ -19888,7 +20009,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-klubnika",
@@ -19910,7 +20032,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-kofe",
@@ -19932,7 +20055,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-limon",
@@ -19954,7 +20078,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-citrusovoe-derevo",
@@ -19976,7 +20101,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-igristyy-apelsin",
@@ -19998,7 +20124,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-milan",
@@ -20020,7 +20147,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-granat",
@@ -20042,7 +20170,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-vanil",
@@ -20064,7 +20193,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-dikiy-les",
@@ -20086,7 +20216,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-morskoy-citrus",
@@ -20108,7 +20239,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-morskoy-briz",
@@ -20130,7 +20262,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-fruktovyy-sad",
@@ -20152,7 +20285,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-vinograd",
@@ -20174,7 +20308,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-chernyy-vinograd",
@@ -20196,7 +20331,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-orehovyy-shokolad",
@@ -20218,7 +20354,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-siren",
@@ -20240,7 +20377,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-apelsin",
@@ -20262,7 +20400,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-banan",
@@ -20284,7 +20423,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-avokado",
@@ -20306,7 +20446,8 @@
                              "volume":  "1 гр",
                              "price_wholesale":  10
                          }
-                     ]
+                     ],
+        "quality":  "LUX"
     },
     {
         "id":  "mono-aromaty-dlya-diffuzorov-i-avtoparfyuma-krid-aventus",
@@ -20327,6 +20468,102 @@
                              "price":  12,
                              "volume":  "1 гр",
                              "price_wholesale":  12
+                         }
+                     ],
+        "quality":  "ECO"
+    },
+    {
+        "id":  "byredo-tobacco-mandarin-2026",
+        "name":  "TOBACCO MANDARIN 2026",
+        "brand":  "BYREDO",
+        "producer":  "Turkey",
+        "quality":  "DE LUX",
+        "type":  "oil",
+        "gender":  "unisex",
+        "notes_top":  "",
+        "notes_heart":  "",
+        "notes_base":  "",
+        "notes":  "",
+        "description":  "",
+        "badge":  null,
+        "in_stock":  true,
+        "image_url":  null,
+        "variants":  [
+                         {
+                             "price":  55,
+                             "volume":  "1 гр",
+                             "price_wholesale":  55
+                         }
+                     ]
+    },
+    {
+        "id":  "initio-parfums-prives-rehab-2",
+        "name":  "REHAB",
+        "brand":  "INITIO PARFUMS PRIVES",
+        "quality":  "DE LUX",
+        "type":  "oil",
+        "gender":  "unisex",
+        "notes_top":  "",
+        "notes_heart":  "",
+        "notes_base":  "",
+        "notes":  "",
+        "description":  "",
+        "badge":  null,
+        "in_stock":  true,
+        "image_url":  null,
+        "variants":  [
+                         {
+                             "price":  60,
+                             "volume":  "1 гр",
+                             "price_wholesale":  60
+                         }
+                     ]
+    },
+    {
+        "id":  "le-labo-santal-33-2026",
+        "name":  "SANTAL 33 2026",
+        "brand":  "LE LABO",
+        "producer":  "Turkey",
+        "quality":  "DE LUX",
+        "type":  "oil",
+        "gender":  "unisex",
+        "notes_top":  "",
+        "notes_heart":  "",
+        "notes_base":  "",
+        "notes":  "",
+        "description":  "",
+        "badge":  null,
+        "in_stock":  true,
+        "image_url":  null,
+        "variants":  [
+                         {
+                             "price":  55,
+                             "volume":  "1 гр",
+                             "price_wholesale":  55
+                         }
+                     ]
+    },
+    {
+        "id":  "mancera-tonka-cola-2025",
+        "name":  "TONKA COLA 2025",
+        "brand":  "MANCERA",
+        "producer":  "Turkey",
+        "quality":  "DE LUX",
+        "type":  "oil",
+        "gender":  "unisex",
+        "notes_top":  "",
+        "notes_heart":  "",
+        "notes_base":  "",
+        "notes":  "",
+        "description":  "",
+        "badge":  null,
+        "in_stock":  true,
+        "image_url":  null,
+        "variants":  [
+                         {
+                             "price":  60,
+                             "volume":  "1 гр",
+                             "price_wholesale":  60
                          }
                      ]
     }
