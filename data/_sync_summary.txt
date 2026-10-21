@@ -1,0 +1,35 @@
+Позиций в прайсе: 853
+Товаров на сайте после синхронизации: 860
+Изменено: 0
+Новых: 0
+Нет в прайсе (сняты с наличия): 0
+Сопоставлено по похожему названию: 18
+
+== Изменения ==
+
+
+== Новые ==
+
+
+== Нет в прайсе ==
+
+
+== Похожие названия (проверить) ==
+  [BVLGARI] «AQVA POUR HOMME ATLANTIQVE 2025» → «AQVA POUR HOMME ATLANTIQVE» (soft)
+  [BOADICEA THE VICTORIOUS] «AURICA 2025» → «AURICA» (soft)
+  [CHANEL] «CHANCE 2024» → «CHANCE(усил версия)» (soft)
+  [DIOR] «SAUVAGE (акция)» → «SAUVAGE» (soft)
+  [ESCENTRIC MOLECULE] «INTELLIGENCE &FANTASY VOLUME 1 •BEAUTIFUL MIND SERIES• Игры разума 1» → «INTELLIGENCE AND FANTASY VOLUME 1 (Игры разума 1)» (soft)
+  [ESCENTRIC MOLECULE] «INTELLIGENCE &FANTASY VOLUME 1 •BEAUTIFUL MIND SERIES• Игры разума 1» → «INTELLIGENCE AND FANTASY VOLUME 1 (Игры разума 1)» (soft)
+  [ESCENTRIC MOLECULE] «PRECISION & GRACE VOLUME 2 •BEAUTIFUL MIND SERIES• Игры разума 2» → «PRECISION AND GRACE VOLUME 2 (Игры разума 2)» (soft)
+  [JULIETTE HAS A GUN] «VANILA VIBES» → «VANILLA VIBES» (fuzzy 0.95)
+  [KILIAN] «PLAYING WITC THE DEV» → «PLAYING WITH THE DEV» (fuzzy 0.88)
+  [LACOSTE] «L.12.12 WHITE (акция)» → «L.12.12 WHITE» (soft)
+  [LACOSTE] «L.12.12 WHITE 2025» → «L.12.12 WHITE» (soft)
+  [LANCOME] «LA VIE EST BELLE L'ECLAТ» → «LA VIE EST BELLE L'ECLAT» (fuzzy 0.94)
+  [LOUIS VUITTON] «AFTERNOON SWIM 2025» → «AFTERNOON SWIM» (soft)
+  [LOUIS VUITTON] «IMAGINATION 2026» → «IMAGINATION(усил версия)» (soft)
+  [MANCERA] «CEDRAT BOISE(2026)» → «CEDRAT BOISE» (soft)
+  [PHILIPP PLEIN PARFUMS] «NO LIMIT$» → «NO LIMITS» (fuzzy 0.92)
+  [XERJOFF SOSPIRO] «GRAN BALLО» → «GRAN BALLO» (fuzzy 0.88)
+  [ZIELINSKI & ROZEN] «TOBACCO, VETIVER» → «TOBACCO, VETIVER & AMBER» (prefix)
